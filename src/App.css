@@ -1,38 +1,92 @@
+body {
+  overflow-x: hidden;
+}
+
 .App {
+  font-family: Arial, sans-serif;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px 0 white, 10px 10px 20px 10px purple,
+      -10px -10px 20px 0 cyan, /*안쪽 그림자*/ inset 0 0 14px 0 white,
+      inset -40px -30px 60px 0 purple, inset -40px -30px 70px 0 blue,
+      inset -40px -30px 100px 0 cyan, inset -40px -30px 140px 0 powderblue;
+  }
+  to {
+    box-shadow: 0 0 20px 0 white, 10px 10px 20px 10px brown,
+      -10px -10px 20px 0 green, /*안쪽 그림자*/ inset 0 0 14px 0 white,
+      inset -40px -30px 60px 0 brown, inset -40px -30px 70px 0 blue,
+      inset -40px -30px 100px 0 green, inset -40px -30px 140px 0 powderblue;
+  }
+}
+
+header {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0 white, 10px 10px 20px 10px purple,
+    -10px -10px 20px 0 cyan, /*안쪽 그림자*/ inset 0 0 14px 0 white,
+    inset -40px -30px 60px 0 purple, inset -40px -30px 70px 0 blue,
+    inset -40px -30px 100px 0 cyan, inset -40px -30px 140px 0 powderblue;
+  animation: glow 2s linear infinite alternate;
+  h1 {
+    text-align: center;
+    line-height: 150px;
+  }
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+section > div {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+p {
+  width: 500px;
+  font-size: 20px;
+  margin: 0 auto;
+  margin-top: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.project-wrapper {
+  margin-top: 100px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+}
+
+.project {
+  width: 300px;
+  height: 300px;
+  background-color: lightskyblue;
+}
+
+.aboutMe {
+  background-color: olive;
+}
+.contact {
+  background-color: bisque;
+}
+.projects {
+  background-color: lightblue;
 }
