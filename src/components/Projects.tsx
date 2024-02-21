@@ -10,6 +10,7 @@ const Projects: React.FC = () => {
         <div className="project">2</div>
         <div className="project">3</div>
       </div>
+
       <DownButton />
     </section>
   );
