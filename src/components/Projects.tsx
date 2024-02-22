@@ -21,7 +21,7 @@ const Projects: React.FC<ProjectsProps> = ({ id, downButton }) => {
       <h2>Projects</h2>
       <div className="project-wrapper">
         {projects.map((project) => (
-          <div key={project.id}>
+          <div className="project" key={project.id}>
             <img src={project.img} alt={project.name} />
           </div>
         ))}

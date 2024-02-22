@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
@@ -7,47 +7,6 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 const App: React.FC = () => {
-  const handleScroll = (e: WheelEvent) => {
-    const yOffset = window.scrollY;
-    const aboutMeOffset = document.getElementById("aboutMe")?.offsetTop || 0;
-    const projectsOffset = document.getElementById("projects")?.offsetTop || 0;
-    const contactOffset = document.getElementById("contact")?.offsetTop || 0;
-
-    if (e.deltaY > 0 && yOffset < projectsOffset) {
-      window.scrollTo({
-        top: projectsOffset,
-        behavior: "smooth",
-      });
-    } else if (
-      e.deltaY < 0 &&
-      yOffset > aboutMeOffset &&
-      yOffset < contactOffset
-    ) {
-      window.scrollTo({
-        top: aboutMeOffset,
-        behavior: "smooth",
-      });
-    } else if (e.deltaY > 0 && yOffset < contactOffset) {
-      window.scrollTo({
-        top: contactOffset,
-        behavior: "smooth",
-      });
-    } else if (e.deltaY < 0 && yOffset > projectsOffset) {
-      window.scrollTo({
-        top: projectsOffset,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("wheel", handleScroll);
-
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-    };
-  }, []);
-
   const downButton = () => {
     const yOffset = window.scrollY;
     const projectsOffset = document.getElementById("projects")?.offsetTop || 0;
