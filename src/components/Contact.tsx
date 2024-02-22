@@ -1,8 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const Contact :React.FC = () => {
+interface ContactProps {
+  id: string;
+}
+
+const Contact: React.FC<ContactProps> = ({ id }) => {
   return (
-    <section className='contact'>
+    <section className="contact" id={id}>
       <h2>Contact</h2>
       <p>HP:</p>
       <p>Email:</p>

@@ -1,9 +1,14 @@
 import React from "react";
 import DownButton from "./DownButton";
 
-const AboutMe: React.FC = () => {
+interface AboutMeProps {
+  id: string;
+  downButton: () => void;
+}
+
+const AboutMe: React.FC<AboutMeProps> = ({ id, downButton }) => {
   return (
-    <section className="aboutMe">
+    <section className="aboutMe" id={id}>
       <h2>About Me</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
@@ -11,7 +16,7 @@ const AboutMe: React.FC = () => {
         consectetur officia fugit! Officia porro neque in beatae distinctio
         similique alias asperiores voluptatem.
       </p>
-      <DownButton />
+      <DownButton downButton={downButton} />
     </section>
   );
 };

@@ -2,41 +2,17 @@
   font-family: Arial, sans-serif;
 }
 
-@keyframes glow {
-  from {
-    box-shadow: 0 0 20px 0 white, 10px 10px 20px 10px purple,
-      -10px -10px 20px 0 cyan, /*안쪽 그림자*/ inset 0 0 14px 0 white,
-      inset -40px -30px 60px 0 purple, inset -40px -30px 70px 0 blue,
-      inset -40px -30px 100px 0 cyan, inset -40px -30px 140px 0 powderblue;
-  }
-  to {
-    box-shadow: 0 0 20px 0 white, 10px 10px 20px 10px brown,
-      -10px -10px 20px 0 green, /*안쪽 그림자*/ inset 0 0 14px 0 white,
-      inset -40px -30px 60px 0 brown, inset -40px -30px 70px 0 blue,
-      inset -40px -30px 100px 0 green, inset -40px -30px 140px 0 powderblue;
-  }
-}
-
 header {
+  z-index: 99;
   position: fixed;
   top: 50px;
   left: 50px;
   width: 200px;
   height: 200px;
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 0 0 20px 0 white, 10px 10px 20px 10px purple,
-    -10px -10px 20px 0 cyan, /*안쪽 그림자*/ inset 0 0 14px 0 white,
-    inset -40px -30px 60px 0 purple, inset -40px -30px 70px 0 blue,
-    inset -40px -30px 100px 0 cyan, inset -40px -30px 140px 0 powderblue;
-  animation: glow 2s linear infinite alternate;
-  h1 {
-    text-align: center;
-    line-height: 150px;
-  }
 }
 
 section {
+  position: relative;
   height: 100vh;
   justify-content: center;
   text-align: center;
@@ -58,7 +34,21 @@ p {
 }
 
 .project-wrapper {
-  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-wrapper > div {
+  margin: 10px;
+}
+
+.project-wrapper img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -78,23 +68,37 @@ footer {
 
 .aboutMe {
   background-color: rgb(215, 215, 182);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .contact {
   background-color: rgb(172, 161, 148);
 }
 .projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
   background-color: rgb(213, 233, 240);
 }
 
 .downButton {
-  position: relative;
-  width: 0;
-  height: 0;
+  position: absolute;
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
   border-top: 50px solid;
   color: gray;
+  bottom: 20px;
+  left: 47%;
   &:hover {
     color: darkslategrey;
   }
+}
+
+canvas {
+  cursor: pointer;
+}
+canvas:focus {
+  outline: none; /* 클릭 포커스 테두리 제거 */
 }

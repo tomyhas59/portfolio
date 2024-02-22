@@ -1,9 +1,10 @@
 import React from "react";
+import BabylonScene from "./BabylonScene";
 
 const Header: React.FC = () => {
   return (
     <header>
-      <h1>My Portfolio</h1>
+      <BabylonScene />
     </header>
   );
 };
