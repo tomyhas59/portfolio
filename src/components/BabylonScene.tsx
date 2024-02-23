@@ -33,7 +33,7 @@ const BabylonScene: React.FC<BabylonSceneProps> = () => {
 
         const sphere = BABYLON.MeshBuilder.CreateSphere(
           "sphere",
-          { diameter: 3 },
+          { diameter: 1 },
           scene
         );
 
@@ -48,7 +48,7 @@ const BabylonScene: React.FC<BabylonSceneProps> = () => {
         // 로테이션 애니메이션 적용
         const animationSphere = new BABYLON.Animation(
           "rotationAnimation",
-          "rotation.y",
+          "rotation.x",
           30,
           BABYLON.Animation.ANIMATIONTYPE_FLOAT,
           BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE

@@ -5,8 +5,8 @@
 header {
   z-index: 99;
   position: fixed;
-  top: 50px;
-  left: 50px;
+  bottom: 0;
+  right: 10px;
   width: 200px;
   height: 200px;
 }
@@ -14,7 +14,7 @@ header {
 section {
   position: relative;
   height: 100vh;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   padding: 10px;
 }
@@ -97,6 +97,7 @@ footer {
   left: 47%;
   &:hover {
     color: darkslategrey;
+    cursor: pointer;
   }
 }
 

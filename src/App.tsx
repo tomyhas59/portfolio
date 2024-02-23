@@ -31,7 +31,6 @@ const App: React.FC = () => {
       <AboutMe id="aboutMe" downButton={downButton} />
       <Projects id="projects" downButton={downButton} />
       <Contact id="contact" />
-
       <Footer />
     </div>
   );
