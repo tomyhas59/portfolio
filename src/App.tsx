@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
@@ -18,7 +18,10 @@ const App: React.FC = () => {
         top: aboutMeOffset,
         behavior: "smooth",
       });
-    } else if (currnetScrollY < projectsOffset) {
+    } else if (
+      currnetScrollY <
+      projectsOffset - 100 /**projects에서 내려가게 동작 */
+    ) {
       window.scrollTo({
         top: projectsOffset,
         behavior: "smooth",

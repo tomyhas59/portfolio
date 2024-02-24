@@ -1,5 +1,4 @@
 import React from "react";
-import DownButton from "./DownButton";
 
 interface ContactProps {
   id: string;

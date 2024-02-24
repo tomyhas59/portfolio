@@ -1,6 +1,6 @@
 import BabylonScene from "./BabylonScene";
 import DownButton from "./DownButton";
-import spaceImg from "../img/space.png";
+
 interface ProjectsProps {
   downButton: () => void;
 }
