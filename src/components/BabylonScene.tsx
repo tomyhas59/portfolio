@@ -1,105 +1,133 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import * as BABYLON from "babylonjs";
-import earthImg from "../img/myColor.png";
 
-interface BabylonSceneProps {}
+import sunImg from "../img/sun.png";
+import earthImg from "../img/earth.png";
+import moonImg from "../img/moon.png";
+import marsImg from "../img/mars.png";
+import spaceImg from "../img/space.png";
 
-const BabylonScene: React.FC<BabylonSceneProps> = () => {
-  const sceneRef = useRef<HTMLCanvasElement>(null);
+const SolarSystem: React.FC = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    if (sceneRef.current) {
-      const canvas = sceneRef.current;
+    const createScene = () => {
+      const canvas = canvasRef.current!;
       const engine = new BABYLON.Engine(canvas, true);
+      const scene = new BABYLON.Scene(engine);
 
-      const createScene = () => {
-        const scene = new BABYLON.Scene(engine);
-        scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
-        const camera = new BABYLON.ArcRotateCamera(
-          "camera",
-          -Math.PI / 2,
-          Math.PI / 2,
-          5,
-          new BABYLON.Vector3(0, 0, 0),
-          scene
-        );
-        camera.attachControl(canvas, true);
+      const camera = new BABYLON.ArcRotateCamera(
+        "camera",
+        -Math.PI / 2,
+        Math.PI / 2,
+        20,
+        BABYLON.Vector3.Zero(),
+        scene
+      );
+      camera.attachControl(canvas, true);
 
-        const light = new BABYLON.HemisphericLight(
-          "light",
-          new BABYLON.Vector3(1, 1, 0),
-          scene
-        );
+      const light = new BABYLON.HemisphericLight(
+        "hemiLight",
+        new BABYLON.Vector3(0, 1, 0),
+        scene
+      );
 
-        const sphere = BABYLON.MeshBuilder.CreateSphere(
-          "sphere",
-          { diameter: 1 },
-          scene
-        );
+      const sunTexture = new BABYLON.Texture(sunImg, scene);
+      const earthTexture = new BABYLON.Texture(earthImg, scene);
+      const moonTexture = new BABYLON.Texture(moonImg, scene);
+      const marsTexture = new BABYLON.Texture(marsImg, scene);
+      const spaceTexture = new BABYLON.Texture(spaceImg, scene);
 
-        // 텍스쳐 이미지 추가
-        const earthMaterial = new BABYLON.StandardMaterial(
-          "earthMaterial",
-          scene
-        );
-        earthMaterial.diffuseTexture = new BABYLON.Texture(earthImg, scene);
-        sphere.material = earthMaterial;
+      const sunMaterial = new BABYLON.StandardMaterial("sunMaterial", scene);
+      sunMaterial.diffuseTexture = sunTexture;
 
-        // 로테이션 애니메이션 적용
-        const animationSphere = new BABYLON.Animation(
-          "rotationAnimation",
-          "rotation.x",
-          30,
-          BABYLON.Animation.ANIMATIONTYPE_FLOAT,
-          BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE
-        );
+      const earthMaterial = new BABYLON.StandardMaterial(
+        "earthMaterial",
+        scene
+      );
+      earthMaterial.diffuseTexture = earthTexture;
 
-        // 애니메이션 키프레임 정의
-        const keyFrames = [];
-        keyFrames.push({
-          frame: 0,
-          value: 0,
-        });
-        keyFrames.push({
-          frame: 200,
-          value: Math.PI * 2,
-        });
+      const moonMaterial = new BABYLON.StandardMaterial("moonMaterial", scene);
+      moonMaterial.diffuseTexture = moonTexture;
 
-        // 애니메이션 키프레임 설정
-        animationSphere.setKeys(keyFrames);
+      const marsMaterial = new BABYLON.StandardMaterial("marsMaterial", scene);
+      marsMaterial.diffuseTexture = marsTexture;
 
-        // 구에 애니메이션 추가
-        sphere.animations.push(animationSphere);
+      const spaceMaterial = new BABYLON.StandardMaterial(
+        "spaceMaterial",
+        scene
+      );
+      spaceMaterial.diffuseTexture = spaceTexture;
+      spaceMaterial.backFaceCulling = false;
 
-        // 활성화된 상태에서 애니메이션 실행
-        scene.beginAnimation(sphere, 0, 200, true);
+      const sun = BABYLON.MeshBuilder.CreateSphere(
+        "sun",
+        { diameter: 5 },
+        scene
+      );
+      sun.material = sunMaterial;
 
-        return scene;
-      };
+      const earth = BABYLON.MeshBuilder.CreateSphere(
+        "earth",
+        { diameter: 1 },
+        scene
+      );
+      earth.position.x = 10;
+      earth.material = earthMaterial;
 
-      const scene = createScene();
+      const moon = BABYLON.MeshBuilder.CreateSphere(
+        "moon",
+        { diameter: 0.5 },
+        scene
+      );
+      moon.position.x = 12;
+      moon.material = moonMaterial;
+
+      const mars = BABYLON.MeshBuilder.CreateSphere(
+        "mars",
+        { diameter: 1.5 },
+        scene
+      );
+      mars.position.x = 15;
+      mars.material = marsMaterial;
+
+      const space = BABYLON.MeshBuilder.CreateSphere(
+        "space",
+        { diameter: 1000 },
+        scene
+      );
+      space.material = spaceMaterial;
+
+      scene.registerBeforeRender(() => {
+        earth.rotation.y += 0.01;
+        moon.rotation.y += 0.01;
+        mars.rotation.y += 0.01;
+
+        earth.position.x = 10 * Math.cos(scene.getAnimationRatio() * 0.01);
+        earth.position.z = 10 * Math.sin(scene.getAnimationRatio() * 0.01);
+
+        moon.position.x = 12 * Math.cos(scene.getAnimationRatio() * 0.03);
+        moon.position.z = 12 * Math.sin(scene.getAnimationRatio() * 0.03);
+
+        mars.position.x = 15 * Math.cos(scene.getAnimationRatio() * 0.008);
+        mars.position.z = 15 * Math.sin(scene.getAnimationRatio() * 0.008);
+      });
 
       engine.runRenderLoop(() => {
         scene.render();
       });
 
-      return () => {
-        engine.dispose();
-      };
-    }
+      window.addEventListener("resize", () => {
+        engine.resize();
+      });
+
+      return scene;
+    };
+
+    createScene();
   }, []);
 
-  const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  return (
-    <canvas
-      style={{ width: "100%", height: "100%" }}
-      ref={sceneRef}
-      onClick={scrollTop}
-    />
-  );
+  return <canvas ref={canvasRef} style={{ width: "100%", height: "100%" }} />;
 };
 
-export default BabylonScene;
+export default SolarSystem;

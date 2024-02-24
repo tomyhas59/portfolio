@@ -2,15 +2,6 @@
   font-family: Arial, sans-serif;
 }
 
-header {
-  z-index: 99;
-  position: fixed;
-  bottom: 0;
-  right: 10px;
-  width: 200px;
-  height: 200px;
-}
-
 section {
   position: relative;
   height: 100vh;
@@ -97,9 +88,35 @@ footer {
   }
 }
 
-canvas {
-  cursor: pointer;
+.upButton {
+  position: absolute;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid;
+  color: gray;
+  bottom: 20px;
+  left: 47%;
+  &:hover {
+    color: darkslategrey;
+    cursor: pointer;
+  }
 }
-canvas:focus {
-  outline: none; /* 클릭 포커스 테두리 제거 */
+canvas {
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+}
+
+@media (max-width: 1200px) {
+  .project {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project {
+    width: 100px;
+    height: 100px;
+  }
 }
