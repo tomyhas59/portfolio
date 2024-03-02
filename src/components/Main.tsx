@@ -6,47 +6,22 @@ interface ProjectsProps {
 }
 
 const Main: React.FC<ProjectsProps> = ({ downButton }) => {
-  const text = "Hello, This is Yonghyeon's portfolio!!";
+  const text = " Hello, This is Yonghyeon's portfolio!!";
   const [typedText, setTypedText] = useState("");
   const [textColor, setTextColor] = useState("#000"); // 초기 색상은 검정색으로 설정
-  const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
     const typingInterval = setInterval(() => {
-      if (isTyping) {
-        setTypedText((prevTypedText) => {
-          if (prevTypedText.length < text.length) {
-            return prevTypedText + text[prevTypedText.length];
-          } else {
-            setIsTyping(false);
-            clearInterval(typingInterval);
-            return prevTypedText;
-          }
-        });
+      if (typedText.length < text.length) {
+        setTypedText((prev) => prev + text[prev.length]);
       } else {
-        setTypedText((prevTypedText) => {
-          if (prevTypedText.length > 0) {
-            return prevTypedText.slice(0, -1);
-          } else {
-            setIsTyping(true);
-            clearInterval(deleteInterval);
-            return prevTypedText;
-          }
-        });
+        setTimeout(() => {
+          setTypedText("");
+        }, 3000);
       }
     }, 100);
-
-    const deleteInterval = setInterval(() => {
-      if (!isTyping && typedText.length > 0) {
-        setTypedText((prevTypedText) => prevTypedText.slice(0, -1));
-      }
-    }, 100);
-
-    return () => {
-      clearInterval(typingInterval);
-      clearInterval(deleteInterval);
-    };
-  }, [isTyping, typedText.length]);
+    return () => clearInterval(typingInterval);
+  }, [typedText.length]);
 
   useEffect(() => {
     const colorInterval = setInterval(() => {

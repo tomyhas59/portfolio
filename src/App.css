@@ -50,9 +50,6 @@ footer {
   line-height: 100px;
 }
 
-.aboutMe {
-  background-color: rgb(215, 215, 182);
-}
 .contact {
   background-color: rgb(172, 161, 148);
 }
@@ -132,4 +129,20 @@ canvas {
 .main > div {
   width: 700px;
   font-size: 100px;
+}
+
+.aboutMeContainer {
+  background-color: rgb(215, 215, 182);
+}
+
+.aboutMeTitle {
+  opacity: 0;
+  transform: translateX(-500px); /*  초기 위치  */
+  transition: opacity 0.5s ease-in, transform 1s ease-in;
+}
+
+.aboutMeContent {
+  opacity: 0;
+  transform: translateX(500px); /*  초기 위치  */
+  transition: opacity 0.5s ease-in, transform 1s ease-in;
 }
