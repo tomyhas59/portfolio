@@ -8,7 +8,7 @@ interface ProjectsProps {
   downButton: () => void;
 }
 
-const Projects: React.FC<ProjectsProps> = ({ id, downButton }) => {
+const Projects = ({ id, downButton }: ProjectsProps) => {
   const projects = [
     {
       id: 1,

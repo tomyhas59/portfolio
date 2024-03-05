@@ -1,10 +1,8 @@
-import React from "react";
-
 interface ContactProps {
   id: string;
 }
 
-const Contact: React.FC<ContactProps> = ({ id }) => {
+const Contact = ({ id }: ContactProps) => {
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

@@ -1,4 +1,3 @@
-import React from "react";
 import DownButton from "./DownButton";
 
 interface AboutMeProps {
@@ -6,7 +5,7 @@ interface AboutMeProps {
   downButton: () => void;
 }
 
-const AboutMe: React.FC<AboutMeProps> = ({ id, downButton }) => {
+const AboutMe = ({ id, downButton }: AboutMeProps) => {
   return (
     <section className="aboutMeContainer" id={id}>
       <h2 className="aboutMeTitle">About Me</h2>

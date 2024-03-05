@@ -2,7 +2,7 @@ interface DownButtonProps {
   downButton: () => void;
 }
 
-const DownButton: React.FC<DownButtonProps> = ({ downButton }) => {
+const DownButton = ({ downButton }: DownButtonProps) => {
   return (
     <div>
       <div className="downButton" onClick={downButton}></div>

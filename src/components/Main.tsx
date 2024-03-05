@@ -5,7 +5,7 @@ interface ProjectsProps {
   downButton: () => void;
 }
 
-const Main: React.FC<ProjectsProps> = ({ downButton }) => {
+const Main = ({ downButton }: ProjectsProps) => {
   const text = " Hello, This is Yonghyeon's portfolio!!";
   const [typedText, setTypedText] = useState("");
   const [textColor, setTextColor] = useState("#000"); // 초기 색상은 검정색으로 설정
