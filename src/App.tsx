@@ -5,6 +5,8 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProjectPage from "./pages/ProjectPage";
 
 const App: React.FC = () => {
   const downButton = () => {
@@ -16,15 +18,19 @@ const App: React.FC = () => {
     const aboutMeTitle: any = document.querySelector(".aboutMeTitle");
     const aboutMeContent: any = document.querySelector(".aboutMeContent");
 
+    const changeStyle = (opacity: number, transform: number) => {
+      aboutMeTitle.style.opacity = opacity;
+      aboutMeTitle.style.transform = `translateX(-${transform}px)`;
+      aboutMeContent.style.opacity = opacity;
+      aboutMeContent.style.transform = `translateX(${transform}px)`;
+    };
+
     if (currnetScrollY < aboutMeOffset) {
       window.scrollTo({
         top: aboutMeOffset,
         behavior: "smooth",
       });
-      aboutMeTitle.style.opacity = 1;
-      aboutMeTitle.style.transform = "translateX(0)";
-      aboutMeContent.style.opacity = 1;
-      aboutMeContent.style.transform = "translateX(0)";
+      changeStyle(1, 0);
     } else if (
       currnetScrollY <
       projectsOffset - 100 /**projects에서 내려가게 동작 */
@@ -33,26 +39,33 @@ const App: React.FC = () => {
         top: projectsOffset,
         behavior: "smooth",
       });
-      aboutMeTitle.style.opacity = 0;
-      aboutMeTitle.style.transform = "translateX(-500px)";
-      aboutMeContent.style.opacity = 0;
-      aboutMeContent.style.transform = "translateX(500px)";
     } else if (currnetScrollY < contactOffset) {
       window.scrollTo({
         top: contactOffset,
         behavior: "smooth",
       });
+      changeStyle(0, 500);
     }
   };
 
   return (
-    <div className="App">
-      <Main downButton={downButton} />
-      <AboutMe id="aboutMe" downButton={downButton} />
-      <Projects id="projects" downButton={downButton} />
-      <Contact id="contact" />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="App">
+              <Main downButton={downButton} />
+              <AboutMe id="aboutMe" downButton={downButton} />
+              <Projects id="projects" downButton={downButton} />
+              <Contact id="contact" />
+              <Footer />
+            </div>
+          }
+        />
+        <Route path="/projects/:id" element={<ProjectPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
