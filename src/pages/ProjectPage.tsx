@@ -11,8 +11,8 @@ const ProjectPage = () => {
   }
 
   return (
-    <div>
-      <h2>{project.name}</h2>
+    <div className="projectPageWrapper">
+      <h2 className="projectName">{project.name}</h2>
       <img src={require(`../img/${project.img}`)} alt={project.name} />
       <p>{project.description}</p>
     </div>
