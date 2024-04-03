@@ -10,7 +10,7 @@ interface ProjectsProps {
 const Projects = ({ id, downButton }: ProjectsProps) => {
   return (
     <section className="projects" id={id}>
-      <h2>Projects</h2>
+      <h1>Projects</h1>
       <div className="project-wrapper">
         {projectsData.map((project) => (
           <div key={project.id}>
