@@ -17,7 +17,7 @@ const Projects = ({ id, downButton }: ProjectsProps) => {
             <Link to={`/projects/${project.id}`}>
               <div className="project">
                 <img
-                  src={require(`../img/${project.img}`)}
+                  src={require(`../img/${project.imgs}`)}
                   alt={project.name}
                 />
               </div>
