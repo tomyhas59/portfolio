@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
@@ -9,6 +9,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProjectPage from "./pages/ProjectPage";
 
 const App: React.FC = () => {
+  const [isMainPage, setIsMainPage] = useState(false);
+
   const downButton = () => {
     const currnetScrollY = window.scrollY;
     const aboutMeOffset = document.getElementById("aboutMe")?.offsetTop || 0;
@@ -48,6 +50,15 @@ const App: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    const projectsOffset = document.getElementById("projects")?.offsetTop || 0;
+    if (isMainPage) {
+      window.scrollTo({
+        top: projectsOffset,
+      });
+    }
+  }, [isMainPage]);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -63,7 +74,10 @@ const App: React.FC = () => {
             </div>
           }
         />
-        <Route path="/projects/:id" element={<ProjectPage />} />
+        <Route
+          path="/projects/:id"
+          element={<ProjectPage setIsMainPage={setIsMainPage} />}
+        />
       </Routes>
     </BrowserRouter>
   );

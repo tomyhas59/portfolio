@@ -1,7 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
 import projectsData from "../data/projects.json";
 
-const ProjectPage = () => {
+interface ProjectPageProps {
+  setIsMainPage: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const ProjectPage = ({ setIsMainPage }: ProjectPageProps) => {
+  setIsMainPage(false);
   const { id } = useParams();
   const navigator = useNavigate();
   const project = projectsData.find((project) => project.id === Number(id));
@@ -12,6 +17,7 @@ const ProjectPage = () => {
 
   const handleBack = () => {
     navigator("/");
+    setIsMainPage(true);
   };
 
   return (
