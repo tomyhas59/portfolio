@@ -5,7 +5,7 @@ interface ProjectPageProps {
   setIsMainPage: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ProjectPage = ({ setIsMainPage }: ProjectPageProps) => {
+const ProjectPage: React.FC<ProjectPageProps> = ({ setIsMainPage }) => {
   setIsMainPage(false);
   const { id } = useParams();
   const navigator = useNavigate();
