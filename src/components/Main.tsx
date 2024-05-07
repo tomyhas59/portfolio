@@ -6,7 +6,7 @@ interface ProjectsProps {
 }
 
 const Main = ({ downButton }: ProjectsProps) => {
-  const text = " Hello, This is Yonghyeon's portfolio!!";
+  const text = " Hello, This is YongHyeon's portfolio!!";
   const [typedText, setTypedText] = useState("");
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Main = ({ downButton }: ProjectsProps) => {
       } else {
         setTimeout(() => {
           setTypedText("");
-        }, 3000);
+        }, 2000);
       }
     }, 100);
     return () => clearInterval(typingInterval);

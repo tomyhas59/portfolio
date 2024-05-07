@@ -3,6 +3,7 @@ import projectsData from "../data/projects.json";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useEffect } from "react";
 interface ProjectPageProps {
   setIsMainPage: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -12,6 +13,10 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ setIsMainPage }) => {
   const { id } = useParams();
   const navigator = useNavigate();
   const project = projectsData.find((project) => project.id === Number(id));
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  });
 
   if (!project) {
     return <div>프로젝트를 찾을 수 없습니다.</div>;
@@ -46,7 +51,15 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ setIsMainPage }) => {
             />
           ))}
         </Slider>
-        <p>{project.description}</p>
+        <p className="description">{project.description}</p>
+        <p>
+          <a className="site" href={project.url} target="blank">
+            홈페이지
+          </a>
+          <a className="site" href={project.gitHub} target="blank">
+            깃허브
+          </a>
+        </p>
       </div>
       <button onClick={handleBack} className="backButton">
         뒤로
