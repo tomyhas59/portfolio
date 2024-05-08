@@ -4,7 +4,7 @@
     "name": "SNS",
     "mainImg": ["SNSMain.png"],
     "imgs": ["SNSMain.png", "SNSLogin.png", "SNSPost.png"],
-    "description": "회원가입, 로그인, 게시글 CRUD와 \n추천 및 검색 기능을 구현한 SNS 사이트",
+    "description": "회원가입, 로그인, 게시글 CRUD와 추천 및 검색 기능을 구현한 SNS 사이트",
     "url": "https://tomyhasblog.vercel.app",
     "gitHub": "https://github.com/tomyhas59/blog"
   },
@@ -26,8 +26,8 @@
     "id": 3,
     "name": "리액트 웹게임",
     "mainImg": ["game1.png"],
-    "imgs": ["game1.png", "game2.png", "game2.png"],
-    "description": "React를 사용한 간단한 웹 게임 모음",
+    "imgs": ["game1.png", "game2.png", "game3.png"],
+    "description": "React를 활용한 간단한 웹 게임 모음",
     "url": "https://tmsgame.vercel.app",
     "gitHub": "https://github.com/tomyhas59/reactGame"
   }

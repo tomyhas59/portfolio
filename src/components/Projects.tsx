@@ -9,9 +9,9 @@ interface ProjectsProps {
 
 const Projects = ({ id, downButton }: ProjectsProps) => {
   return (
-    <section className="projects" id={id}>
-      <h1>Projects</h1>
-      <div className="project-wrapper">
+    <section className="projectsWrapper" id={id}>
+      <h2>Projects</h2>
+      <div className="projects">
         {projectsData.map((project) => (
           <div key={project.id}>
             <Link to={`/projects/${project.id}`}>

@@ -18,13 +18,13 @@ const Main = ({ downButton }: ProjectsProps) => {
           setTypedText("");
         }, 2000);
       }
-    }, 100);
+    }, 70);
     return () => clearInterval(typingInterval);
   }, [typedText.length]);
 
   return (
     <section className="main">
-      <div>{typedText}</div>
+      <div className="mainText">{typedText}</div>
       <DownButton downButton={downButton} />
     </section>
   );

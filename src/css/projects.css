@@ -1,10 +1,48 @@
-.projectPageWrapper {
-  padding: 100px;
-  background-color: antiquewhite;
-  height: 100vh;
-  text-align: center;
+/*projects*/
+.projectsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  background-color: rgb(213, 233, 240);
 }
 
+.projects {
+  display: flex;
+}
+
+.project {
+  border: 2px solid silver;
+  border-radius: 20px;
+  width: 300px;
+  height: 300px;
+  > img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  @media (max-width: 480px) {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/*profect page*/
+
+/*projectPageWrapper 부모 요소*/
+#root {
+  background-color: antiquewhite;
+  height: 100vh;
+}
+.projectPageWrapper {
+  padding: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .projectName {
   font-size: 24px;
   font-weight: bold;
@@ -14,35 +52,25 @@
 .projectItem {
   width: 1024px;
   margin: 0 auto;
+  margin-top: 100px;
   border-radius: 20px;
   .projectImg {
     width: 700px !important;
     height: 500px;
     border-radius: 20px;
     border: 2px solid silver;
+    @media (max-width: 480px) {
+      width: 250px !important;
+      height: 250px;
+    }
   }
   > p {
     width: 100%;
     font-weight: bold;
     margin-top: 50px;
   }
-}
-
-.projects {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 100px;
-  background-color: rgb(213, 233, 240);
-}
-
-.project {
-  border: 2px solid silver;
-  > img {
+  @media (max-width: 480px) {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
   }
 }
 
@@ -59,31 +87,9 @@
   color: #0056b3;
 }
 
-.project-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  > div {
-    margin: 10px;
-  }
-}
-
-.project-wrapper .project {
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 20px;
-  cursor: pointer;
-  &:hover img {
-    transform: scale(1.1);
-  }
-}
-
 .backButton {
   position: fixed;
   top: 1%;
-  left: 5%;
-  transform: translate(-50%);
   background-color: burlywood;
   font-size: 2rem;
   border-radius: 20px;
@@ -91,6 +97,10 @@
   cursor: pointer;
   &:hover {
     background-color: rgb(211, 135, 36);
+  }
+  @media (max-width: 480px) {
+    font-size: 20px;
+    left: 0;
   }
 }
 
@@ -106,18 +116,4 @@
 .slick-next:before {
   font-size: 50px !important;
   color: black !important;
-}
-
-@media (max-width: 1200px) {
-  .project {
-    width: 200px;
-    height: 200px;
-  }
-}
-
-@media (max-width: 600px) {
-  .project {
-    width: 100px;
-    height: 100px;
-  }
 }

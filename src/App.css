@@ -1,16 +1,37 @@
 @import url("./css/projects.css");
 
-.App {
-  font-family: Arial, sans-serif;
+.sectionMenu {
+  z-index: 999;
+  position: fixed;
+  right: 120px;
+  @media (max-width: 480px) {
+    right: 10px;
+  }
+}
+
+.sectionList {
+  list-style: none;
+  display: flex;
+  cursor: pointer;
+  > li {
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    &:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      font-size: 15px;
+    }
+  }
 }
 
 section {
   position: relative;
-  height: 99vh;
-  padding: 10px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   text-align: center;
 }
@@ -19,11 +40,26 @@ section div {
   gap: 20px;
 }
 
+/*secton title*/
+h2 {
+  font-family: "Arial Black", sans-serif;
+  font-size: 44px;
+  text-align: center;
+  background-image: linear-gradient(to left, #09a655, #04270d, #1dace5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mainText {
+  background-image: linear-gradient(to right, #7e70e7, #1dace5, #09a655);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 p {
   width: 500px;
   font-size: 20px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 footer {
@@ -35,10 +71,15 @@ footer {
   line-height: 100px;
 }
 
-.contact {
+.contactWrapper {
   background-color: rgb(172, 161, 148);
 }
 
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .downButton {
   position: absolute;
   border-left: 30px solid transparent;
@@ -46,7 +87,8 @@ footer {
   border-top: 50px solid;
   color: gray;
   bottom: 20px;
-  left: 47%;
+  left: 50%;
+  transform: translate(-50%);
   &:hover {
     color: darkslategrey;
     cursor: pointer;
@@ -60,7 +102,8 @@ footer {
   border-bottom: 50px solid;
   color: gray;
   bottom: 20px;
-  left: 47%;
+  left: 50%;
+  transform: translate(-50%);
   &:hover {
     color: darkslategrey;
     cursor: pointer;
@@ -70,12 +113,20 @@ footer {
 .main > div {
   width: 700px;
   font-size: 100px;
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
 }
 
-.aboutMeContainer {
+.aboutMeWrapper {
   background-color: rgb(215, 215, 182);
 }
 
+.aboutMe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .aboutMeTitle {
   opacity: 0;
   transform: translateX(-500px); /*  초기 위치  */
@@ -86,4 +137,8 @@ footer {
   opacity: 0;
   transform: translateX(500px); /*  초기 위치  */
   transition: opacity 0.5s ease-in, transform 1s ease-in;
+  @media (max-width: 480px) {
+    font-size: 12px;
+    width: 250px;
+  }
 }
