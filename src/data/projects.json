@@ -25,8 +25,8 @@
   {
     "id": 3,
     "name": "리액트 웹게임",
-    "mainImg": ["shopMain.png"],
-    "imgs": [],
+    "mainImg": ["game1.png"],
+    "imgs": ["game1.png", "game2.png", "game2.png"],
     "description": "React를 사용한 간단한 웹 게임 모음",
     "url": "",
     "gitHub": ""
