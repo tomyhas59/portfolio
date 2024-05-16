@@ -14,6 +14,7 @@
   display: flex;
   cursor: pointer;
   > li {
+    color: #fff;
     margin-left: 15px;
     font-size: 20px;
     font-weight: bold;
@@ -45,13 +46,13 @@ h2 {
   font-family: "Arial Black", sans-serif;
   font-size: 44px;
   text-align: center;
-  background-image: linear-gradient(to left, #09a655, #04270d, #1dace5);
+  background-image: linear-gradient(to left, #a6e09a, #e2f4d6, #a6d3f5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .mainText {
-  background-image: linear-gradient(to right, #7e70e7, #1dace5, #09a655);
+  background-image: linear-gradient(to left, #a6e09a, #e2f4d6, #a6d3f5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -71,12 +72,9 @@ footer {
   line-height: 100px;
 }
 
-.contactWrapper {
-  background-color: rgb(172, 161, 148);
-}
-
 .contact {
   display: flex;
+  color: #fff;
   flex-direction: column;
   justify-content: space-around;
 }
@@ -118,10 +116,6 @@ footer {
   }
 }
 
-.aboutMeWrapper {
-  background-color: rgb(215, 215, 182);
-}
-
 .aboutMe {
   display: flex;
   flex-direction: column;
@@ -134,6 +128,9 @@ footer {
 }
 
 .aboutMeContent {
+  width: 500px;
+  color: #fff;
+  border-radius: 20px;
   opacity: 0;
   transform: translateX(500px); /*  초기 위치  */
   transition: opacity 0.5s ease-in, transform 1s ease-in;

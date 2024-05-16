@@ -21,7 +21,7 @@ const Projects = ({ id, downButton }: ProjectsProps) => {
                   alt={project.name}
                 />
               </div>
-              <div>{project.name}</div>
+              <div className="projectName">{project.name}</div>
             </Link>
           </div>
         ))}
