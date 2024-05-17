@@ -1,9 +1,21 @@
-������Ʈ ������
+프로젝트 설명서
 
-1. ���α�
-	Ŭ���̾�Ʈ:
-		�������� ���� ���� ���� 
-		Ÿ�Խ�ũ��Ʈ�� �̿��Ͽ� ������ ����
-		styled-components�� ����Ͽ� �پ��� ��Ÿ�� ���� 
-		ä�� ���������� Socket.IO�� ����Ͽ� �޽��� �ǽð� ����
+1. 블로그
+	클라이언트:
+		리덕스를 통한 상태 관리 
+		타입스크립트를 이용하여 안정성 증대
+		styled-components를 사용하여 다양한 스타일 적용 
+		채팅 페이지에서 Socket.IO를 사용하여 메시지 실시간 수신
+	서버:
+		node.js와 express로 서버 생성
+		jwt를 이용한 로그인 인증 구현
+		mysql Sequelize로 데이터베이스와 연결
+		Socket.IO를 사용하여 실시간 웹 소켓 기능
+
+2.쇼핑몰
+	클라이언트:
+		Next와 타입스크립트로 개발
+		GraphQL 뮤테이션을 통해 서버와 통신
+		Recoil을 사용하여 전역 상태 관리
+		firebase auth 로그인 인증
 		
