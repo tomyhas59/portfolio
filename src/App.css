@@ -57,10 +57,10 @@ h2 {
   -webkit-text-fill-color: transparent;
 }
 p {
-  width: 500px;
+  width: 550px;
   font-size: 20px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 footer {
@@ -80,9 +80,9 @@ footer {
 }
 .downButton {
   position: absolute;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-top: 50px solid;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 30px solid;
   color: gray;
   bottom: 20px;
   left: 50%;
@@ -95,9 +95,9 @@ footer {
 
 .upButton {
   position: absolute;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 50px solid;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 30px solid;
   color: gray;
   bottom: 20px;
   left: 50%;
@@ -123,8 +123,7 @@ footer {
 }
 .aboutMeTitle {
   opacity: 0;
-  transform: translateX(-500px); /*  초기 위치  */
-  transition: opacity 0.5s ease-in, transform 1s ease-in;
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
 }
 
 .aboutMeContent {
@@ -132,8 +131,7 @@ footer {
   color: #fff;
   border-radius: 20px;
   opacity: 0;
-  transform: translateX(500px); /*  초기 위치  */
-  transition: opacity 0.5s ease-in, transform 1s ease-in;
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
   @media (max-width: 480px) {
     font-size: 12px;
     width: 250px;

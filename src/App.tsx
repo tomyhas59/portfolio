@@ -32,6 +32,24 @@ const App: React.FC = () => {
     else changeStyle(0, 500);
   };
 
+  const showProjects = (sectionId: string) => {
+    const projects: HTMLElement | null = document.querySelector(".projects");
+
+    const changeStyle = (
+      opacity: number,
+      transform: number,
+      visibility: string
+    ) => {
+      if (projects) {
+        projects.style.opacity = opacity.toString();
+        projects.style.transform = `translateY(${transform}px)`;
+        projects.style.visibility = visibility;
+      }
+    };
+    if (sectionId === "projects") changeStyle(1, 0, "visible");
+    else changeStyle(0, -1000, "hidden");
+  };
+
   const downButton = (sectionId: string) => {
     const targetOffset = document.getElementById(sectionId)?.offsetTop || 0;
 
@@ -41,6 +59,7 @@ const App: React.FC = () => {
     });
 
     showAboutMeText(sectionId);
+    showProjects(sectionId);
   };
 
   useEffect(() => {
@@ -66,6 +85,7 @@ const App: React.FC = () => {
       });
     }
     showAboutMeText(sectionId);
+    showProjects(sectionId);
   };
 
   useEffect(() => {
