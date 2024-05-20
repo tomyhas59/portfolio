@@ -57,9 +57,6 @@ const App: React.FC = () => {
       top: targetOffset,
       behavior: "smooth",
     });
-
-    showAboutMeText(sectionId);
-    showProjects(sectionId);
   };
 
   useEffect(() => {
@@ -84,22 +81,31 @@ const App: React.FC = () => {
         behavior: "smooth",
       });
     }
-    showAboutMeText(sectionId);
-    showProjects(sectionId);
   };
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const aboutMeOffset = document.getElementById("aboutMe")?.offsetTop || 0;
+      const projectsOffset =
+        document.getElementById("projects")?.offsetTop || 0;
+
       if (scrollPosition < aboutMeOffset - 500) showAboutMeText("");
       else if (
-        scrollPosition >= aboutMeOffset &&
+        scrollPosition >= aboutMeOffset - 100 &&
         scrollPosition < aboutMeOffset + 500
       )
         showAboutMeText("aboutMe");
-      else if (scrollPosition >= aboutMeOffset + 500) showAboutMeText("");
+      else if (scrollPosition < projectsOffset - 500) showProjects("");
+      else if (
+        scrollPosition >= projectsOffset - 100 &&
+        scrollPosition < projectsOffset + 500
+      ) {
+        showProjects("projects");
+        showAboutMeText("");
+      } else if (scrollPosition >= projectsOffset + 100) showProjects("");
     };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {

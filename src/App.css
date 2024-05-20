@@ -132,8 +132,10 @@ footer {
   border-radius: 20px;
   opacity: 0;
   transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-  @media (max-width: 480px) {
-    font-size: 12px;
-    width: 250px;
+  > p {
+    @media (max-width: 480px) {
+      width: 300px;
+      font-size: 11px;
+    }
   }
 }
