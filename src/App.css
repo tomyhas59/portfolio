@@ -14,7 +14,6 @@
   display: flex;
   cursor: pointer;
   > li {
-    color: #fff;
     margin-left: 15px;
     font-size: 20px;
     font-weight: bold;
@@ -46,16 +45,8 @@ h2 {
   font-family: "Arial Black", sans-serif;
   font-size: 44px;
   text-align: center;
-  background-image: linear-gradient(to left, #a6e09a, #e2f4d6, #a6d3f5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
-.mainText {
-  background-image: linear-gradient(to left, #a6e09a, #e2f4d6, #a6d3f5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 p {
   width: 550px;
   font-size: 20px;
@@ -65,7 +56,6 @@ p {
 
 footer {
   background-color: #333;
-  color: #fff;
   text-align: center;
   width: 100%;
   height: 100px;
@@ -74,7 +64,6 @@ footer {
 
 .contact {
   display: flex;
-  color: #fff;
   flex-direction: column;
   justify-content: space-around;
 }
@@ -128,7 +117,6 @@ footer {
 
 .aboutMeContent {
   width: 500px;
-  color: #fff;
   border-radius: 20px;
   opacity: 0;
   transition: opacity 0.5s ease-in, transform 0.5s ease-in;
@@ -137,5 +125,42 @@ footer {
       width: 300px;
       font-size: 11px;
     }
+  }
+}
+
+.modeToggle {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.moon,
+.sun {
+  width: 70px;
+  height: 70px;
+  background-color: yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 255, 0, 0.6);
+  text-align: center;
+  line-height: 70px;
+  font-weight: bold;
+}
+
+.sun {
+  background-color: rgb(247, 95, 19);
+  box-shadow: 0 0 30px rgba(242, 82, 28, 0.6);
+}
+
+@media (max-width: 480px) {
+  .moon,
+  .sun {
+    width: 35px;
+    height: 35px;
+    font-size: 10px;
+    line-height: 35px;
   }
 }

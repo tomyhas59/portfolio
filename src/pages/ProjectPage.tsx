@@ -1,17 +1,15 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import projectsData from "../data/projects.json";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect } from "react";
-interface ProjectPageProps {
-  setIsMainPage: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
-const ProjectPage: React.FC<ProjectPageProps> = ({ setIsMainPage }) => {
-  setIsMainPage(false);
+const ProjectPage: React.FC<{
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
+}> = ({ isDarkMode, toggleDarkMode }) => {
   const { id } = useParams();
-  const navigator = useNavigate();
   const project = projectsData.find((project) => project.id === Number(id));
 
   useEffect(() => {
@@ -21,11 +19,6 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ setIsMainPage }) => {
   if (!project) {
     return <div>프로젝트를 찾을 수 없습니다.</div>;
   }
-
-  const handleBack = () => {
-    navigator("/");
-    setIsMainPage(true);
-  };
 
   const settings = {
     dots: true,
@@ -39,6 +32,13 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ setIsMainPage }) => {
 
   return (
     <div className="projectPageWrapper">
+      <button onClick={toggleDarkMode} className="modeToggle">
+        {isDarkMode ? (
+          <li className="moon">DARK</li>
+        ) : (
+          <li className="sun">LIGHT</li>
+        )}
+      </button>
       <h2 className="projectName">{project.name}</h2>
       <div className="projectItem">
         <Slider {...settings}>
@@ -61,9 +61,6 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ setIsMainPage }) => {
           </a>
         </p>
       </div>
-      <button onClick={handleBack} className="backButton">
-        뒤로
-      </button>
     </div>
   );
 };

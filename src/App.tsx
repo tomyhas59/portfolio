@@ -8,7 +8,25 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProjectPage from "./pages/ProjectPage";
 
 const App: React.FC = () => {
-  const [isMainPage, setIsMainPage] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem("darkMode") === "enabled";
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((preMode) => {
+      const newMode = !preMode;
+      localStorage.setItem("darkMode", newMode ? "enabled" : "disabled");
+      return newMode;
+    });
+  };
 
   const showAboutMeText = (sectionId: string) => {
     const aboutMeTitle: HTMLElement | null =
@@ -58,15 +76,6 @@ const App: React.FC = () => {
       behavior: "smooth",
     });
   };
-
-  useEffect(() => {
-    const projectsOffset = document.getElementById("projects")?.offsetTop || 0;
-    if (isMainPage) {
-      window.scrollTo({
-        top: projectsOffset,
-      });
-    }
-  }, [isMainPage]);
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -126,8 +135,16 @@ const App: React.FC = () => {
                   <li onClick={() => scrollToSection("aboutMe")}>About Me</li>
                   <li onClick={() => scrollToSection("projects")}>Projects</li>
                   <li onClick={() => scrollToSection("contact")}>Contact</li>
+                  <button onClick={toggleDarkMode} className="modeToggle">
+                    {isDarkMode ? (
+                      <li className="moon">DARK</li>
+                    ) : (
+                      <li className="sun">LIGHT</li>
+                    )}
+                  </button>
                 </ul>
               </nav>
+
               <Main downButton={() => downButton("aboutMe")} />
               <AboutMe id="aboutMe" downButton={() => downButton("projects")} />
               <Projects
@@ -140,7 +157,12 @@ const App: React.FC = () => {
         />
         <Route
           path="/projects/:id"
-          element={<ProjectPage setIsMainPage={setIsMainPage} />}
+          element={
+            <ProjectPage
+              isDarkMode={isDarkMode}
+              toggleDarkMode={toggleDarkMode}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>
