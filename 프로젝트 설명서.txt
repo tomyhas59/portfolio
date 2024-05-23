@@ -16,6 +16,8 @@
 	클라이언트:
 		Next와 타입스크립트로 개발
 		GraphQL 뮤테이션을 통해 서버와 통신
-		Recoil을 사용하여 전역 상태 관리
+		Recoil 전역 상태 관리
 		firebase auth 로그인 인증
-		
+	서버: 
+		Apollo Server로 GraphQL 쿼리를 처리
+		Firebase Firestore로 데이터 저장
