@@ -14,7 +14,7 @@ const ProjectPage: React.FC<{
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
-  });
+  }, []);
 
   if (!project) {
     return <div>프로젝트를 찾을 수 없습니다.</div>;
@@ -40,27 +40,53 @@ const ProjectPage: React.FC<{
         )}
       </button>
       <h2 className="projectName">{project.name}</h2>
+      <p className="description">{project.description}</p>
       <div className="projectItem">
         <Slider {...settings}>
           {project.imgs.map((img, index) => (
-            <img
-              className="projectImg"
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
               key={index}
-              src={require(`../img/${img}`)}
-              alt={`${project.name} 이미지 ${index}`}
-            />
+            >
+              <img
+                className="projectImg"
+                src={require(`../img/${img}`)}
+                alt={`${project.name} 이미지 ${index}`}
+              />
+            </a>
           ))}
         </Slider>
-        <p className="description">{project.description}</p>
-        <p>
-          <a className="site" href={project.url} target="blank">
-            홈페이지
-          </a>
-          <a className="site" href={project.gitHub} target="blank">
-            깃허브
-          </a>
-        </p>
       </div>
+      <div className="goToSite">
+        <a className="site" href={project.url} target="blank">
+          홈페이지
+        </a>
+        <a className="site" href={project.gitHub} target="blank">
+          깃허브
+        </a>
+      </div>
+      {project.detail && (
+        <div className="projectDetail">
+          <div>
+            <div className="detailTitle">client</div>
+            <ul>
+              {project.detail?.client.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <div className="detailTitle">server</div>
+            <ul>
+              {project.detail?.server.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
