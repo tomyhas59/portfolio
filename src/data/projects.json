@@ -6,7 +6,21 @@
     "imgs": ["SNSMain.png", "SNSLogin.png", "SNSPost.png"],
     "description": "회원가입, 로그인, 게시글 CRUD와 추천 및 검색 기능을 구현한 SNS 사이트",
     "url": "https://tomyhasblog.vercel.app",
-    "gitHub": "https://github.com/tomyhas59/blog"
+    "gitHub": "https://github.com/tomyhas59/blog",
+    "detail": {
+      "client": [
+        "리덕스를 통한 상태 관리",
+        "타입스크립트를 이용하여 안정성 증대",
+        "styled-components를 사용하여 다양한 스타일 적용",
+        "채팅 페이지에서 Socket.IO를 사용하여 메시지 실시간 수신"
+      ],
+      "server": [
+        "node.js와 express로 서버 생성",
+        "jwt를 이용한 로그인 인증 구현",
+        "mysql Sequelize로 데이터 관리",
+        "Socket.IO를 사용하여 실시간 웹 소켓 기능"
+      ]
+    }
   },
   {
     "id": 2,
@@ -20,7 +34,19 @@
     ],
     "description": "간단한 회원가입, 로그인, 장바구니 담기 기능 쇼핑몰 사이트",
     "url": "https://tmshop.vercel.app/",
-    "gitHub": "https://github.com/tomyhas59/shop"
+    "gitHub": "https://github.com/tomyhas59/shop",
+    "detail": {
+      "client": [
+        "Next와 타입스크립트로 개발",
+        "GraphQL 뮤테이션을 통해 서버와 통신",
+        "Recoil 전역 상태 관리",
+        "firebase auth 로그인 인증"
+      ],
+      "server": [
+        "Apollo Server로 GraphQL 쿼리를 처리",
+        "Firebase Firestore로 데이터 관리"
+      ]
+    }
   },
   {
     "id": 3,
