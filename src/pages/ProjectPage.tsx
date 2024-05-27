@@ -7,8 +7,8 @@ import { useEffect } from "react";
 
 const ProjectPage: React.FC<{
   isDarkMode: boolean;
-  toggleDarkMode: () => void;
-}> = ({ isDarkMode, toggleDarkMode }) => {
+  darkModeToggle: () => void;
+}> = ({ isDarkMode, darkModeToggle }) => {
   const { id } = useParams();
   const project = projectsData.find((project) => project.id === Number(id));
 
@@ -32,7 +32,7 @@ const ProjectPage: React.FC<{
 
   return (
     <div className="projectPageWrapper">
-      <button onClick={toggleDarkMode} className="modeToggle">
+      <button onClick={darkModeToggle} className="modeToggle">
         {isDarkMode ? (
           <li className="moon">DARK</li>
         ) : (

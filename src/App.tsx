@@ -20,7 +20,7 @@ const App: React.FC = () => {
     }
   }, [isDarkMode]);
 
-  const toggleDarkMode = () => {
+  const darkModeToggle = () => {
     setIsDarkMode((preMode) => {
       const newMode = !preMode;
       localStorage.setItem("darkMode", newMode ? "enabled" : "disabled");
@@ -135,7 +135,7 @@ const App: React.FC = () => {
                   <li onClick={() => scrollToSection("aboutMe")}>About Me</li>
                   <li onClick={() => scrollToSection("projects")}>Projects</li>
                   <li onClick={() => scrollToSection("contact")}>Contact</li>
-                  <button onClick={toggleDarkMode} className="modeToggle">
+                  <button onClick={darkModeToggle} className="modeToggle">
                     {isDarkMode ? (
                       <li className="moon">DARK</li>
                     ) : (
@@ -160,7 +160,7 @@ const App: React.FC = () => {
           element={
             <ProjectPage
               isDarkMode={isDarkMode}
-              toggleDarkMode={toggleDarkMode}
+              darkModeToggle={darkModeToggle}
             />
           }
         />
