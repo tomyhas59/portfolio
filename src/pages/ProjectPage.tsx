@@ -61,7 +61,7 @@ const ProjectPage: React.FC<{
       </div>
       <div className="goToSite">
         <a className="site" href={project.url} target="blank">
-          홈페이지
+          사이트
         </a>
         <a className="site" href={project.gitHub} target="blank">
           깃허브

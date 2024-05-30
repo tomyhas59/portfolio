@@ -62,11 +62,12 @@ footer {
   line-height: 100px;
 }
 
-.contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.contactTitle,
+.contactContent {
+  opacity: 0;
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
 }
+
 .downButton {
   position: absolute;
   border-left: 20px solid transparent;
@@ -110,7 +111,8 @@ footer {
   flex-direction: column;
   justify-content: space-around;
 }
-.aboutMeTitle {
+.aboutMeTitle,
+.aboutMeContent {
   opacity: 0;
   transition: opacity 0.5s ease-in, transform 0.5s ease-in;
 }
@@ -118,8 +120,6 @@ footer {
 .aboutMeContent {
   width: 500px;
   border-radius: 20px;
-  opacity: 0;
-  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
   > p {
     @media (max-width: 480px) {
       width: 300px;

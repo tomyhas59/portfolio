@@ -9,8 +9,8 @@ const Contact = ({ id }: ContactProps) => {
 
   return (
     <section className="contactWrapper" id={id}>
-      <h2>Contact</h2>
-      <div className="contact">
+      <h2 className="contactTitle">Contact</h2>
+      <div className="contactContent">
         <p>HP : 010-7170-5926</p>
         <p>Email : yh9035926@naver.com</p>
         <p>

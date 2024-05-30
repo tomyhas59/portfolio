@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProjectPage from "./pages/ProjectPage";
 
 const App: React.FC = () => {
+  //dark mode
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem("darkMode") === "enabled";
   });
@@ -27,8 +28,8 @@ const App: React.FC = () => {
       return newMode;
     });
   };
-
-  const showAboutMeText = (sectionId: string) => {
+  //show animation
+  const showAboutMe = (sectionId: string) => {
     const aboutMeTitle: HTMLElement | null =
       document.querySelector(".aboutMeTitle");
     const aboutMeContent: HTMLElement | null =
@@ -68,6 +69,28 @@ const App: React.FC = () => {
     else changeStyle(0, -1000, "hidden");
   };
 
+  const showContact = (sectionId: string) => {
+    const contactTitle: HTMLElement | null =
+      document.querySelector(".contactTitle");
+    const contactContent: HTMLElement | null =
+      document.querySelector(".contactContent");
+
+    const changeStyle = (opacity: number, transform: number) => {
+      if (contactTitle) {
+        contactTitle.style.opacity = opacity.toString();
+        contactTitle.style.transform = `translateX(-${transform}px)`;
+      }
+
+      if (contactContent) {
+        contactContent.style.opacity = opacity.toString();
+        contactContent.style.transform = `translateX(${transform}px)`;
+      }
+    };
+
+    if (sectionId === "contact") changeStyle(1, 0);
+    else changeStyle(0, 500);
+  };
+  //-----------------------------------------------------
   const downButton = (sectionId: string) => {
     const targetOffset = document.getElementById(sectionId)?.offsetTop || 0;
 
@@ -98,21 +121,29 @@ const App: React.FC = () => {
       const aboutMeOffset = document.getElementById("aboutMe")?.offsetTop || 0;
       const projectsOffset =
         document.getElementById("projects")?.offsetTop || 0;
+      const contactOffset = document.getElementById("contact")?.offsetTop || 0;
 
-      if (scrollPosition < aboutMeOffset - 500) showAboutMeText("");
+      if (scrollPosition < aboutMeOffset - 500) showAboutMe("");
       else if (
         scrollPosition >= aboutMeOffset - 100 &&
         scrollPosition < aboutMeOffset + 500
-      )
-        showAboutMeText("aboutMe");
-      else if (scrollPosition < projectsOffset - 500) showProjects("");
-      else if (
+      ) {
+        showAboutMe("aboutMe");
+        showProjects("");
+      } else if (
         scrollPosition >= projectsOffset - 100 &&
         scrollPosition < projectsOffset + 500
       ) {
         showProjects("projects");
-        showAboutMeText("");
-      } else if (scrollPosition >= projectsOffset + 100) showProjects("");
+        showAboutMe("");
+        showContact("");
+      } else if (
+        scrollPosition >= contactOffset - 100 &&
+        scrollPosition < contactOffset + 500
+      ) {
+        showProjects("");
+        showContact("contact");
+      }
     };
 
     window.addEventListener("scroll", handleScroll);

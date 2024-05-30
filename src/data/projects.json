@@ -10,7 +10,7 @@
     "detail": {
       "client": [
         "리덕스를 통한 상태 관리",
-        "타입스크립트를 이용하여 안정성 증대",
+        "타입스크립트로 안정성 증대",
         "styled-components를 사용하여 다양한 스타일 적용",
         "채팅 페이지에서 Socket.IO를 사용하여 메시지 실시간 수신"
       ],
@@ -50,7 +50,7 @@
   },
   {
     "id": 3,
-    "name": "리액트 웹게임",
+    "name": "심심풀이",
     "mainImg": ["game1.png"],
     "imgs": ["game1.png", "game2.png", "game3.png"],
     "description": "React를 활용한 간단한 웹 게임 모음",
