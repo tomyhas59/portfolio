@@ -78,12 +78,16 @@ const ProjectPage: React.FC<{
             </ul>
           </div>
           <div>
-            <div className="detailTitle">server</div>
-            <ul>
-              {project.detail?.server.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
+            {project.detail?.server && (
+              <>
+                <div className="detailTitle">server</div>
+                <ul>
+                  {project.detail.server.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
         </div>
       )}

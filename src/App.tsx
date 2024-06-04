@@ -34,6 +34,7 @@ const App: React.FC = () => {
       document.querySelector(".aboutMeTitle");
     const aboutMeContent: HTMLElement | null =
       document.querySelector(".aboutMeContent");
+    const skills: HTMLElement | null = document.querySelector(".skills");
 
     const changeStyle = (opacity: number, transform: number) => {
       if (aboutMeTitle) {
@@ -44,6 +45,11 @@ const App: React.FC = () => {
       if (aboutMeContent) {
         aboutMeContent.style.opacity = opacity.toString();
         aboutMeContent.style.transform = `translateX(${transform}px)`;
+      }
+      if (skills) {
+        setTimeout(() => {
+          skills.style.opacity = opacity.toString();
+        }, 1000);
       }
     };
 

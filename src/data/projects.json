@@ -37,7 +37,7 @@
     "gitHub": "https://github.com/tomyhas59/shop",
     "detail": {
       "client": [
-        "Next와 타입스크립트로 개발",
+        "NextJS",
         "GraphQL 뮤테이션을 통해 서버와 통신",
         "Recoil 전역 상태 관리",
         "firebase auth 로그인 인증"
@@ -53,8 +53,11 @@
     "name": "심심풀이",
     "mainImg": ["game1.png"],
     "imgs": ["game1.png", "game2.png", "game3.png"],
-    "description": "React를 활용한 간단한 웹 게임 모음",
+    "description": "React를 활용한 간단한 웹 사이트",
     "url": "https://tmsgame.vercel.app",
-    "gitHub": "https://github.com/tomyhas59/reactGame"
+    "gitHub": "https://github.com/tomyhas59/reactGame",
+    "detail": {
+      "client": ["JavaScript 코드를 React 형식으로 적용"]
+    }
   }
 ]
