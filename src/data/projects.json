@@ -9,8 +9,8 @@
     "gitHub": "https://github.com/tomyhas59/blog",
     "detail": {
       "client": [
-        "리덕스를 통한 상태 관리",
-        "타입스크립트로 안정성 증대",
+        "Redux를 통한 상태 관리",
+        "typeScript로 안정성 증대",
         "styled-components를 사용하여 다양한 스타일 적용",
         "채팅 페이지에서 Socket.IO를 사용하여 메시지 실시간 수신"
       ],
@@ -37,7 +37,7 @@
     "gitHub": "https://github.com/tomyhas59/shop",
     "detail": {
       "client": [
-        "NextJS",
+        "NextJS, typeScript",
         "GraphQL 뮤테이션을 통해 서버와 통신",
         "Recoil 전역 상태 관리",
         "firebase auth 로그인 인증"
