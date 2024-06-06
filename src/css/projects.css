@@ -72,10 +72,8 @@
 }
 
 .projectItem {
-  width: 1024px;
-  margin: 0 auto;
-  border-radius: 20px;
-
+  width: 700px;
+  margin: 50px auto;
   @media (max-width: 480px) {
     width: 77%;
   }
@@ -114,7 +112,6 @@
 }
 
 .projectDetail {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   li {

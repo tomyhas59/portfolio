@@ -41,24 +41,22 @@ const ProjectPage: React.FC<{
       </button>
       <h2 className="projectName">{project.name}</h2>
       <p className="description">{project.description}</p>
-      <div className="projectItem">
-        <Slider {...settings}>
-          {project.imgs.map((img, index) => (
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={index}
-            >
-              <img
-                className="projectImg"
-                src={require(`../img/${img}`)}
-                alt={`${project.name} 이미지 ${index}`}
-              />
-            </a>
-          ))}
-        </Slider>
-      </div>
+      <Slider {...settings} className="projectItem">
+        {project.imgs.map((img, index) => (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={index}
+          >
+            <img
+              className="projectImg"
+              src={require(`../img/${img}`)}
+              alt={`${project.name} 이미지 ${index}`}
+            />
+          </a>
+        ))}
+      </Slider>
       <div className="goToSite">
         <a className="site" href={project.url} target="blank">
           사이트
