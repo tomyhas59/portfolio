@@ -17,8 +17,14 @@
     margin-left: 15px;
     font-size: 20px;
     font-weight: bold;
+    padding-block: 5px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: 0.4s;
+    background-size: 0 4px;
     &:hover {
-      text-decoration: underline;
+      background-size: 100% 4px;
+      background-image: linear-gradient(to right, Black, Black);
     }
     @media (max-width: 480px) {
       font-size: 15px;
@@ -130,6 +136,8 @@ footer {
 
 .skills {
   width: 500px;
+  font-size: 20px;
+  font-weight: bold;
   opacity: 0;
   transition: opacity 1s ease-in;
   @media (max-width: 480px) {

@@ -21,7 +21,7 @@
   font-size: 2rem;
   border-radius: 10px;
   @media (max-width: 480px) {
-    width: 130px;
+    width: 250px;
     font-size: 1rem;
     padding: 0 1rem 2rem 1rem;
   }
@@ -40,6 +40,34 @@
   font-weight: bold;
   &:hover {
     text-decoration: underline;
+  }
+}
+.leftArrow,
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 3rem;
+  color: #545252;
+  z-index: 1000;
+}
+
+.leftArrow {
+  left: 10%;
+}
+
+.rightArrow {
+  right: 10%;
+}
+
+@media (max-width: 480px) {
+  .leftArrow {
+    left: 0;
+  }
+
+  .rightArrow {
+    right: 0;
   }
 }
 
