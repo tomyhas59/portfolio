@@ -171,9 +171,9 @@ const App: React.FC = () => {
                   ))}
                   <button onClick={darkModeToggle} className="modeToggle">
                     {isDarkMode ? (
-                      <button className="moon">DARK</button>
+                      <div className="moon">DARK</div>
                     ) : (
-                      <button className="sun">LIGHT</button>
+                      <div className="sun">LIGHT</div>
                     )}
                   </button>
                 </ul>

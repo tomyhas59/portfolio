@@ -70,8 +70,8 @@ const ProjectPage: React.FC<{
           <div>
             <div className="detailTitle">client</div>
             <ul>
-              {project.detail?.client.map((item) => (
-                <li>{item}</li>
+              {project.detail?.client.map((item, index) => (
+                <li key={index}>{item}</li>
               ))}
             </ul>
           </div>
@@ -80,8 +80,8 @@ const ProjectPage: React.FC<{
               <>
                 <div className="detailTitle">server</div>
                 <ul>
-                  {project.detail.server.map((item) => (
-                    <li>{item}</li>
+                  {project.detail.server.map((item, index) => (
+                    <li key={index}>{item}</li>
                   ))}
                 </ul>
               </>
