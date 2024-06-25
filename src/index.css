@@ -9,14 +9,23 @@ body {
 }
 
 body.dark-mode {
-  margin: 0;
-  padding: 0;
   color: floralwhite;
   background-image: url("./img/back.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+}
+
+body.dark-mode li {
+  background-image: linear-gradient(to right, #fff, #fff);
+  &:hover {
+    background-image: linear-gradient(to right, #fff, #fff);
+  }
+}
+
+body.dark-mode li.active {
+  background-image: linear-gradient(to right, #fff, #fff);
 }
 
 body.dark-mode .slick-prev:before,

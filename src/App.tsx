@@ -12,13 +12,10 @@ const App: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem("darkMode") === "enabled";
   });
+  const [activeSection, setActiveSection] = useState<string>("home");
 
   useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add("dark-mode");
-    } else {
-      document.body.classList.remove("dark-mode");
-    }
+    document.body.classList.toggle("dark-mode", isDarkMode);
   }, [isDarkMode]);
 
   const darkModeToggle = () => {
@@ -99,25 +96,15 @@ const App: React.FC = () => {
   //-----------------------------------------------------
   const downButton = (sectionId: string) => {
     const targetOffset = document.getElementById(sectionId)?.offsetTop || 0;
-
-    window.scrollTo({
-      top: targetOffset,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: targetOffset, behavior: "smooth" });
   };
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      window.scrollTo({
-        top: section.offsetTop,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: section.offsetTop, behavior: "smooth" });
     } else {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -129,17 +116,21 @@ const App: React.FC = () => {
         document.getElementById("projects")?.offsetTop || 0;
       const contactOffset = document.getElementById("contact")?.offsetTop || 0;
 
-      if (scrollPosition < aboutMeOffset - 500) showAboutMe("");
-      else if (
+      if (scrollPosition < aboutMeOffset - 500) {
+        setActiveSection("home");
+        showAboutMe("");
+      } else if (
         scrollPosition >= aboutMeOffset - 100 &&
         scrollPosition < aboutMeOffset + 500
       ) {
+        setActiveSection("aboutMe");
         showAboutMe("aboutMe");
         showProjects("");
       } else if (
         scrollPosition >= projectsOffset - 100 &&
         scrollPosition < projectsOffset + 500
       ) {
+        setActiveSection("projects");
         showProjects("projects");
         showAboutMe("");
         showContact("");
@@ -147,6 +138,7 @@ const App: React.FC = () => {
         scrollPosition >= contactOffset - 100 &&
         scrollPosition < contactOffset + 500
       ) {
+        setActiveSection("contact");
         showProjects("");
         showContact("contact");
       }
@@ -168,15 +160,20 @@ const App: React.FC = () => {
             <div className="App">
               <nav className="sectionMenu">
                 <ul className="sectionList">
-                  <li onClick={() => scrollToSection("")}>Home</li>
-                  <li onClick={() => scrollToSection("aboutMe")}>About Me</li>
-                  <li onClick={() => scrollToSection("projects")}>Projects</li>
-                  <li onClick={() => scrollToSection("contact")}>Contact</li>
+                  {["home", "aboutMe", "projects", "contact"].map((section) => (
+                    <li
+                      key={section}
+                      className={activeSection === section ? "active" : ""}
+                      onClick={() => scrollToSection(section)}
+                    >
+                      {section.charAt(0).toUpperCase() + section.slice(1)}
+                    </li>
+                  ))}
                   <button onClick={darkModeToggle} className="modeToggle">
                     {isDarkMode ? (
-                      <li className="moon">DARK</li>
+                      <button className="moon">DARK</button>
                     ) : (
-                      <li className="sun">LIGHT</li>
+                      <button className="sun">LIGHT</button>
                     )}
                   </button>
                 </ul>

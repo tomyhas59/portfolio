@@ -17,18 +17,24 @@
     margin-left: 15px;
     font-size: 20px;
     font-weight: bold;
-    padding-block: 5px;
+    padding-block: 10px;
     background-repeat: no-repeat;
     background-position: bottom;
     transition: 0.4s;
     background-size: 0 4px;
+    background-image: linear-gradient(to right, Black, Black);
     &:hover {
       background-size: 100% 4px;
       background-image: linear-gradient(to right, Black, Black);
     }
+
     @media (max-width: 480px) {
       font-size: 15px;
     }
+  }
+  > li.active {
+    background-size: 100% 4px;
+    background-image: linear-gradient(to right, Black, Black);
   }
 }
 
@@ -190,10 +196,12 @@ footer {
   height: 70px;
   background-color: yellow;
   border-radius: 50%;
+  border: none;
   box-shadow: 0 0 30px rgba(255, 255, 0, 0.6);
   text-align: center;
   line-height: 70px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .sun {

@@ -42,6 +42,12 @@
     text-decoration: underline;
   }
 }
+.card span {
+  position: absolute;
+  right: 20%;
+  color: red;
+}
+
 .leftArrow,
 .rightArrow {
   position: absolute;

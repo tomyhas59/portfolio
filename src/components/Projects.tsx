@@ -39,6 +39,7 @@ const Card = ({
       <Link to={`/projects/${id}`} className="goToProject">
         {name}
       </Link>
+      <span>←Click</span>
     </animated.div>
   );
 };
