@@ -162,6 +162,7 @@ const App: React.FC = () => {
                 <ul className="sectionList">
                   {["home", "aboutMe", "projects", "contact"].map((section) => (
                     <li
+                      id="list"
                       key={section}
                       className={activeSection === section ? "active" : ""}
                       onClick={() => scrollToSection(section)}

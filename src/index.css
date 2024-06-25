@@ -17,14 +17,14 @@ body.dark-mode {
   background-position: center;
 }
 
-body.dark-mode li {
+body.dark-mode #list {
   background-image: linear-gradient(to right, #fff, #fff);
   &:hover {
     background-image: linear-gradient(to right, #fff, #fff);
   }
 }
 
-body.dark-mode li.active {
+body.dark-mode #list.active {
   background-image: linear-gradient(to right, #fff, #fff);
 }
 
