@@ -3,35 +3,47 @@ html {
 }
 
 body {
-  background-color: antiquewhite;
+  background-image: url("./img/light.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   color: black;
   overflow-x: hidden;
 }
 
 body.dark-mode {
   color: floralwhite;
-  background-image: url("./img/back.png");
+  background-image: url("./img/dark.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-}
-
-body.dark-mode #list {
-  background-image: linear-gradient(to right, #fff, #fff);
-  &:hover {
+  #list {
+    background-image: linear-gradient(to right, #fff, #fff);
+    &:hover {
+      background-image: linear-gradient(to right, #fff, #fff);
+    }
+  }
+  #list.active {
     background-image: linear-gradient(to right, #fff, #fff);
   }
-}
 
-body.dark-mode #list.active {
-  background-image: linear-gradient(to right, #fff, #fff);
-}
-
-body.dark-mode .slick-prev:before,
-body.dark-mode .slick-next:before,
-body.dark-mode .slick-dots li button:before {
-  color: white !important;
+  .downButton,
+  .upButton,
+  .rightArrow,
+  .leftArrow {
+    color: #fff;
+    &:hover {
+      color: darkslategrey;
+      cursor: pointer;
+    }
+  }
+  .slick-prev:before,
+  .slick-next:before,
+  .slick-dots li button:before {
+    color: white !important;
+  }
 }
 
 a {
