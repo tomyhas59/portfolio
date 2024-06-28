@@ -4,9 +4,6 @@
   z-index: 999;
   position: fixed;
   right: 120px;
-  @media (max-width: 480px) {
-    right: 10px;
-  }
 }
 
 .sectionList {
@@ -26,10 +23,6 @@
     &:hover {
       background-size: 100% 4px;
       background-image: linear-gradient(to right, Black, Black);
-    }
-
-    @media (max-width: 480px) {
-      font-size: 15px;
     }
   }
   > li.active {
@@ -113,9 +106,6 @@ footer {
 .main > div {
   width: 700px;
   font-size: 100px;
-  @media (max-width: 480px) {
-    font-size: 20px;
-  }
 }
 
 .aboutMe {
@@ -154,12 +144,6 @@ footer {
       font-weight: 200;
     }
   }
-  > p {
-    @media (max-width: 480px) {
-      width: 300px;
-      font-size: 11px;
-    }
-  }
 }
 
 .skills {
@@ -178,9 +162,6 @@ footer {
   transition: 0.5s ease-out;
   &:hover {
     transform: scale(1.3);
-  }
-  @media (max-width: 480px) {
-    width: 30px;
   }
 }
 
@@ -219,6 +200,26 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .sectionMenu {
+    right: 10px;
+  }
+  .sectionList > li {
+    font-size: 10px;
+  }
+
+  .main > div {
+    font-size: 20px;
+  }
+  .aboutMeContent > p {
+    width: 300px;
+    font-size: 11px;
+  }
+  .skills {
+    width: 250px;
+  }
+  .skillImg {
+    width: 30px;
+  }
   .moon,
   .sun {
     width: 35px;

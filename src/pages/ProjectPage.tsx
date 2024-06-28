@@ -67,7 +67,7 @@ const ProjectPage: React.FC<{
       </div>
       {project.detail && (
         <div className="projectDetail">
-          <div>
+          <div className="clientDetail">
             <div className="detailTitle">client</div>
             <ul>
               {project.detail?.client.map((item, index) => (
@@ -75,7 +75,7 @@ const ProjectPage: React.FC<{
               ))}
             </ul>
           </div>
-          <div>
+          <div className="serverDetail">
             {project.detail?.server && (
               <>
                 <div className="detailTitle">server</div>

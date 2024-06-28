@@ -20,11 +20,6 @@
   padding: 0 2rem 3rem 2rem;
   font-size: 2rem;
   border-radius: 10px;
-  @media (max-width: 480px) {
-    width: 250px;
-    font-size: 1rem;
-    padding: 0 1rem 2rem 1rem;
-  }
 }
 
 .card img {
@@ -71,16 +66,6 @@
   right: 10%;
 }
 
-@media (max-width: 480px) {
-  .leftArrow {
-    left: 0;
-  }
-
-  .rightArrow {
-    right: 0;
-  }
-}
-
 /*profect page*/
 
 /*projectPageWrapper 부모 요소*/
@@ -102,17 +87,11 @@
 .description {
   width: 700px;
   font-size: 16px;
-  @media (max-width: 480px) {
-    width: 300px;
-  }
 }
 
 .projectItem {
   width: 700px;
   margin: 50px auto;
-  @media (max-width: 480px) {
-    width: 77%;
-  }
 }
 
 .projectImg {
@@ -132,9 +111,6 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  @media (max-width: 480px) {
-    font-size: 10px;
-  }
 }
 .site {
   display: inline-block;
@@ -150,11 +126,13 @@
 .projectDetail {
   display: flex;
   justify-content: center;
+
+  ul {
+    list-style-type: decimal;
+  }
   li {
     text-align: left;
-  }
-  @media (max-width: 480px) {
-    font-size: 10px;
+    word-break: keep-all;
   }
 }
 
@@ -167,4 +145,41 @@
 .slick-next:before {
   font-size: 50px !important;
   color: black !important;
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 250px;
+    font-size: 1rem;
+    padding: 0 1rem 2rem 1rem;
+  }
+  .leftArrow {
+    left: 0;
+  }
+
+  .rightArrow {
+    right: 0;
+  }
+  .description {
+    width: 300px;
+  }
+  .goToSite {
+    font-size: 12px;
+  }
+
+  .projectItem {
+    width: 77%;
+  }
+
+  .projectImg {
+    width: 250px !important;
+    height: 250px;
+  }
+
+  .projectDetail > div > ul > li {
+    font-size: 10px;
+  }
+  .serverDetail {
+    margin-left: -20px;
+  }
 }
