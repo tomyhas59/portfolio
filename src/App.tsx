@@ -144,20 +144,10 @@ const App: React.FC = () => {
       }
     };
 
-    const debounce = (func: (...args: any[]) => void, wait: number) => {
-      let timeout: NodeJS.Timeout;
-      return (...args: any[]) => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func(...args), wait);
-      };
-    };
-
-    const debouncedHandleScroll = debounce(handleScroll, 50);
-
-    window.addEventListener("scroll", debouncedHandleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", debouncedHandleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 

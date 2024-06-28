@@ -39,10 +39,12 @@ section {
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 
 section div {
   gap: 20px;
+  overflow: hidden;
 }
 
 /*secton title*/
@@ -203,16 +205,10 @@ footer {
   .sectionMenu {
     right: 10px;
   }
-  .sectionList {
-    flex-direction: column;
-    align-items: flex-start;
-  }
   .sectionList > li {
     font-size: 10px;
   }
-  section div {
-    gap: 10px;
-  }
+
   .main > div {
     font-size: 20px;
   }
