@@ -54,9 +54,11 @@ const AboutMe = ({ id, downButton }: AboutMeProps) => {
       </div>
       <div className="skills">
         <div>SKILLS</div>
-        {skills.map((item, index) => (
-          <img key={index} className="skillImg" src={item} alt={`${item}`} />
-        ))}
+        <div className="skillImgs">
+          {skills.map((item, index) => (
+            <img key={index} className="skillImg" src={item} alt={`${item}`} />
+          ))}
+        </div>
       </div>
       <DownButton downButton={downButton} />
     </section>

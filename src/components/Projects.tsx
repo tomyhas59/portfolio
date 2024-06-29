@@ -4,6 +4,7 @@ import projectsData from "../data/projects.json";
 import { useState } from "react";
 import { useSpring, animated, config } from "react-spring";
 import Carousel from "react-spring-3d-carousel";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 interface ProjectsProps {
   id: string;
@@ -67,14 +68,12 @@ const Projects = ({ id, downButton }: ProjectsProps) => {
   return (
     <section className="projectsWrapper" id={id}>
       <h2>Projects</h2>
-      <div
+      <FaArrowLeft
         className="leftArrow"
         onClick={() =>
           setGoToSlide((prev) => (prev !== undefined ? prev - 1 : 0))
         }
-      >
-        &#9664;
-      </div>
+      />
       <div className="projects">
         <Carousel
           slides={cards}
@@ -84,14 +83,13 @@ const Projects = ({ id, downButton }: ProjectsProps) => {
           animationConfig={config.gentle}
         />
       </div>
-      <div
+      <FaArrowRight
         className="rightArrow"
         onClick={() =>
           setGoToSlide((prev) => (prev !== undefined ? prev + 1 : 0))
         }
-      >
-        &#9654;
-      </div>
+      />
+
       <DownButton downButton={downButton} />
     </section>
   );

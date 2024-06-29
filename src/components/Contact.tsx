@@ -1,3 +1,4 @@
+import { FaArrowUp } from "react-icons/fa";
 interface ContactProps {
   id: string;
 }
@@ -20,7 +21,7 @@ const Contact = ({ id }: ContactProps) => {
           </a>
         </p>
       </div>
-      <div className="upButton" onClick={scrollTop}></div>
+      <FaArrowUp className="upButton" onClick={scrollTop} />
     </section>
   );
 };

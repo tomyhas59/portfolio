@@ -1,3 +1,5 @@
+import { FaArrowDown } from "react-icons/fa";
+
 interface DownButtonProps {
   downButton: () => void;
 }
@@ -5,7 +7,7 @@ interface DownButtonProps {
 const DownButton = ({ downButton }: DownButtonProps) => {
   return (
     <div>
-      <div className="downButton" onClick={downButton}></div>
+      <FaArrowDown className="downButton" onClick={downButton} />
     </div>
   );
 };
