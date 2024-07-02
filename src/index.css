@@ -26,29 +26,29 @@ a {
 body.dark-mode {
   color: floralwhite;
   background-image: url("./img/dark.png");
-}
-
-body.dark-mode #list {
-  background-image: linear-gradient(to right, #fff, #fff);
-  &:hover,
-  &.active {
+  #list {
     background-image: linear-gradient(to right, #fff, #fff);
+    &:hover,
+    &.active {
+      background-image: linear-gradient(to right, #fff, #fff);
+    }
   }
-}
-
-body.dark-mode .downButton,
-body.dark-mode .upButton,
-body.dark-mode .rightArrow,
-body.dark-mode .leftArrow {
-  color: #fff;
-  &:hover {
-    color: darkslategrey;
-    cursor: pointer;
+  .projectDetail > div {
+    background-image: linear-gradient(to bottom, #555555, #929191, #6f6767);
   }
-}
-
-body.dark-mode .slick-prev:before,
-body.dark-mode .slick-next:before,
-body.dark-mode .slick-dots li button:before {
-  color: white !important;
+  .downButton,
+  .upButton,
+  .rightArrow,
+  .leftArrow {
+    color: #fff;
+    &:hover {
+      color: darkslategrey;
+      cursor: pointer;
+    }
+  }
+  .slick-prev:before,
+  .slick-next:before,
+  .slick-dots li button:before {
+    color: white !important;
+  }
 }

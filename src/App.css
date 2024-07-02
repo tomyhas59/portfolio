@@ -182,14 +182,14 @@ footer {
 
 .moon,
 .sun {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   background-color: yellow;
   border-radius: 50%;
   border: none;
   box-shadow: 0 0 30px rgba(255, 255, 0, 0.6);
   text-align: center;
-  line-height: 70px;
+  line-height: 50px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.5s;

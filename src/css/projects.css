@@ -51,6 +51,7 @@
   cursor: pointer;
   font-size: 3rem;
   color: #545252;
+  right: 10%;
   z-index: 1000;
   &:hover {
     color: darkslategrey;
@@ -62,18 +63,14 @@
   left: 10%;
 }
 
-.rightArrow {
-  right: 10%;
-}
-
 /*profect page*/
 
 /*projectPageWrapper 부모 요소*/
-.root {
-  height: 100vh;
-  overflow: hidden;
-}
 .projectPageWrapper {
+  height: 100vh;
+  overflow: auto;
+}
+.projectPageContent {
   margin-top: 50px;
   text-align: center;
   display: flex;
@@ -95,6 +92,9 @@
 .projectItem {
   width: 500px;
   margin: 50px auto;
+  a {
+    width: 400px !important;
+  }
 }
 
 .projectImg {
@@ -124,20 +124,23 @@
 .projectDetail {
   display: flex;
   justify-content: center;
-  margin-top: -20px;
+  margin-top: -25px;
+
   > div {
     border-radius: 15px;
     margin: 2px;
     text-align: center;
-    background-color: aliceblue;
+    background-image: linear-gradient(to bottom, #a4e8fd, #c5e8f3, #f7f9f9);
   }
   ul {
     width: 300px;
+    padding: 10px;
+    font-size: 12px;
   }
   li {
     list-style: decimal inside;
     word-break: keep-all;
-    margin: 10px auto;
+    margin: 5px auto;
     width: 250px;
     text-align: left;
     text-indent: -18px;
@@ -149,6 +152,7 @@
 }
 
 .detailTitle {
+  margin-top: 10px;
   font-size: 24px;
   font-weight: bold;
 }
@@ -157,6 +161,30 @@
 .slick-next:before {
   font-size: 50px !important;
   color: black !important;
+}
+
+.nextProject,
+.prevProject {
+  position: absolute;
+  font-size: 17px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  right: -50px;
+  background-color: rgb(167, 167, 167);
+  top: 40%;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  &:hover {
+    background-color: rgb(216, 215, 215);
+    color: #4f5151;
+  }
+}
+
+.prevProject {
+  left: -50px;
+  text-align: right;
 }
 
 @media (max-width: 480px) {
@@ -181,21 +209,44 @@
 
   .projectItem {
     width: 77%;
+    a {
+      width: 250px !important;
+    }
   }
 
   .projectImg {
     width: 250px !important;
     height: 150px;
   }
+  .detailTitle {
+    font-size: 12px;
+  }
 
   .projectDetail {
     ul {
-      width: 180px;
+      width: 150px;
+      padding: 5px;
+      font-size: 9px;
     }
     li {
-      font-size: 10px;
       text-indent: -10px;
-      width: 150px;
+      width: 110px;
     }
+  }
+  .nextProject,
+  .prevProject {
+    font-size: 10px;
+    width: 50px;
+    height: 50px;
+    right: -25px;
+  }
+  .prevProject {
+    left: -25px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 25px !important;
+    color: black !important;
   }
 }

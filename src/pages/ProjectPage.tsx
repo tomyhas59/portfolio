@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import projectsData from "../data/projects.json";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -11,6 +11,7 @@ const ProjectPage: React.FC<{
 }> = ({ isDarkMode, darkModeToggle }) => {
   const { id } = useParams();
   const project = projectsData.find((project) => project.id === Number(id));
+  const navigator = useNavigate();
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -19,6 +20,24 @@ const ProjectPage: React.FC<{
   if (!project) {
     return <div>프로젝트를 찾을 수 없습니다.</div>;
   }
+
+  const nextProject = () => {
+    const currentIndex = projectsData.findIndex(
+      (project) => project.id === Number(id)
+    );
+    const nextProjectId = projectsData[currentIndex + 1].id;
+
+    navigator(`/projects/${nextProjectId}`);
+  };
+
+  const prevProject = () => {
+    const currentIndex = projectsData.findIndex(
+      (project) => project.id === Number(id)
+    );
+    const nextProjectId = projectsData[currentIndex - 1].id;
+
+    navigator(`/projects/${nextProjectId}`);
+  };
 
   const settings = {
     dots: true,
@@ -31,8 +50,8 @@ const ProjectPage: React.FC<{
   };
 
   return (
-    <div className="root">
-      <div className="projectPageWrapper">
+    <div className="projectPageWrapper">
+      <div className="projectPageContent">
         <button onClick={darkModeToggle} className="modeToggle">
           {isDarkMode ? (
             <li className="moon">DARK</li>
@@ -45,6 +64,7 @@ const ProjectPage: React.FC<{
         <Slider {...settings} className="projectItem">
           {project.imgs.map((img, index) => (
             <a
+              className="projectLink"
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -59,6 +79,9 @@ const ProjectPage: React.FC<{
           ))}
         </Slider>
         <div className="goToSite">
+          <a className="site" href="/">
+            홈으로
+          </a>
           <a className="site" href={project.url} target="blank">
             사이트
           </a>
@@ -91,6 +114,16 @@ const ProjectPage: React.FC<{
           </div>
         )}
       </div>
+      {id === "1" ? null : (
+        <button className="prevProject" onClick={prevProject}>
+          prev &nbsp;
+        </button>
+      )}
+      {id === `${projectsData.length}` ? null : (
+        <button className="nextProject" onClick={nextProject}>
+          &nbsp; next
+        </button>
+      )}
     </div>
   );
 };
