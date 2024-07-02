@@ -69,10 +69,12 @@
 /*profect page*/
 
 /*projectPageWrapper 부모 요소*/
-#root {
+.root {
   height: 100vh;
+  overflow: hidden;
 }
 .projectPageWrapper {
+  margin-top: 50px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -91,17 +93,16 @@
 }
 
 .projectItem {
-  width: 700px;
+  width: 500px;
   margin: 50px auto;
 }
 
 .projectImg {
-  width: 600px !important;
-  height: 400px;
+  width: 400px !important;
+  height: 200px;
   border-radius: 20px;
   margin: 0 auto;
   border: 2px solid silver;
-
   @media (max-width: 480px) {
     width: 250px !important;
     height: 250px;
@@ -110,8 +111,8 @@
 
 .goToSite {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 5%;
+  right: 7%;
 }
 .site {
   display: inline-block;
@@ -127,17 +128,27 @@
 .projectDetail {
   display: flex;
   justify-content: center;
-  div {
-    margin: 10px;
-    text-align: left;
+  margin-top: -20px;
+  > div {
+    border-radius: 15px;
+    margin: 1px;
+    text-align: center;
+    background-color: aliceblue;
   }
   ul {
-    list-style-type: decimal;
     width: 300px;
   }
   li {
-    text-align: left;
+    list-style: decimal inside;
     word-break: keep-all;
+    margin: 10px auto;
+    width: 250px;
+    text-align: left;
+    text-indent: -18px;
+    padding-left: 18px;
+    &::marker {
+      font-weight: bold;
+    }
   }
 }
 
@@ -178,15 +189,17 @@
 
   .projectImg {
     width: 250px !important;
-    height: 250px;
+    height: 150px;
   }
 
   .projectDetail {
     ul {
-      width: 150px;
+      width: 200px;
     }
     li {
       font-size: 10px;
+      text-indent: -10px;
+      width: 150px;
     }
   }
 }

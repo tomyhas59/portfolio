@@ -31,64 +31,66 @@ const ProjectPage: React.FC<{
   };
 
   return (
-    <div className="projectPageWrapper">
-      <button onClick={darkModeToggle} className="modeToggle">
-        {isDarkMode ? (
-          <li className="moon">DARK</li>
-        ) : (
-          <li className="sun">LIGHT</li>
-        )}
-      </button>
-      <h2 className="projectName">{project.name}</h2>
-      <p className="description">{project.description}</p>
-      <Slider {...settings} className="projectItem">
-        {project.imgs.map((img, index) => (
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={index}
-          >
-            <img
-              className="projectImg"
-              src={require(`../img/${img}`)}
-              alt={`${project.name} 이미지 ${index}`}
-            />
+    <div className="root">
+      <div className="projectPageWrapper">
+        <button onClick={darkModeToggle} className="modeToggle">
+          {isDarkMode ? (
+            <li className="moon">DARK</li>
+          ) : (
+            <li className="sun">LIGHT</li>
+          )}
+        </button>
+        <h2 className="projectName">{project.name}</h2>
+        <p className="description">{project.description}</p>
+        <Slider {...settings} className="projectItem">
+          {project.imgs.map((img, index) => (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={index}
+            >
+              <img
+                className="projectImg"
+                src={require(`../img/${img}`)}
+                alt={`${project.name} 이미지 ${index}`}
+              />
+            </a>
+          ))}
+        </Slider>
+        <div className="goToSite">
+          <a className="site" href={project.url} target="blank">
+            사이트
           </a>
-        ))}
-      </Slider>
-      <div className="goToSite">
-        <a className="site" href={project.url} target="blank">
-          사이트
-        </a>
-        <a className="site" href={project.gitHub} target="blank">
-          깃허브
-        </a>
-      </div>
-      {project.detail && (
-        <div className="projectDetail">
-          <div className="clientDetail">
-            <div className="detailTitle">client</div>
-            <ul>
-              {project.detail?.client.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="serverDetail">
-            {project.detail?.server && (
-              <>
-                <div className="detailTitle">server</div>
-                <ul>
-                  {project.detail.server.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              </>
-            )}
-          </div>
+          <a className="site" href={project.gitHub} target="blank">
+            깃허브
+          </a>
         </div>
-      )}
+        {project.detail && (
+          <div className="projectDetail">
+            <div className="clientDetail">
+              <div className="detailTitle">client</div>
+              <ul>
+                {project.detail?.client.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="serverDetail">
+              {project.detail?.server && (
+                <>
+                  <div className="detailTitle">server</div>
+                  <ul>
+                    {project.detail.server.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
