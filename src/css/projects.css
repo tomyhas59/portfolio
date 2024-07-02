@@ -103,10 +103,6 @@
   border-radius: 20px;
   margin: 0 auto;
   border: 2px solid silver;
-  @media (max-width: 480px) {
-    width: 250px !important;
-    height: 250px;
-  }
 }
 
 .goToSite {
@@ -131,7 +127,7 @@
   margin-top: -20px;
   > div {
     border-radius: 15px;
-    margin: 1px;
+    margin: 2px;
     text-align: center;
     background-color: aliceblue;
   }
@@ -194,7 +190,7 @@
 
   .projectDetail {
     ul {
-      width: 200px;
+      width: 180px;
     }
     li {
       font-size: 10px;
