@@ -237,4 +237,7 @@ footer {
     bottom: 80px;
     left: 45%;
   }
+  .contactContent > p {
+    font-size: 16px;
+  }
 }
