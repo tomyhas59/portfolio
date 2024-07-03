@@ -14,29 +14,39 @@ const ProjectPage: React.FC<{
   const navigator = useNavigate();
 
   useEffect(() => {
-    window.scrollTo({ top: 0 });
+    openCurtain("slideDown");
   }, []);
 
   if (!project) {
     return <div>프로젝트를 찾을 수 없습니다.</div>;
   }
 
-  const nextProject = () => {
+  const openCurtain = (direction: string) => {
+    const $curtain = document.querySelector(".curtain") as HTMLElement | null;
+    if ($curtain) {
+      $curtain.style.animation = "none";
+      void $curtain.offsetHeight;
+      $curtain.style.animation = `${direction} 1s  ease-in-out forwards`;
+    }
+  };
+
+  const handleProject = (num: number) => {
     const currentIndex = projectsData.findIndex(
       (project) => project.id === Number(id)
     );
-    const nextProjectId = projectsData[currentIndex + 1].id;
+    const ProjectId = projectsData[currentIndex + num].id;
 
-    navigator(`/projects/${nextProjectId}`);
+    navigator(`/projects/${ProjectId}`);
+  };
+
+  const nextProject = () => {
+    openCurtain("slideRight");
+    handleProject(1);
   };
 
   const prevProject = () => {
-    const currentIndex = projectsData.findIndex(
-      (project) => project.id === Number(id)
-    );
-    const nextProjectId = projectsData[currentIndex - 1].id;
-
-    navigator(`/projects/${nextProjectId}`);
+    openCurtain("slideLeft");
+    handleProject(-1);
   };
 
   const settings = {
@@ -51,6 +61,7 @@ const ProjectPage: React.FC<{
 
   return (
     <div className="projectPageWrapper">
+      <div className="curtain"></div>
       <div className="projectPageContent">
         <button onClick={darkModeToggle} className="modeToggle">
           {isDarkMode ? (

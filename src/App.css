@@ -194,8 +194,8 @@ footer {
   cursor: pointer;
   transition: 0.5s;
   &:hover {
-    transform: scale(1.1); /* 호버 시 조금 확대됨 */
-    box-shadow: 0 0 50px rgba(255, 255, 0, 0.8); /* 그림자 색상이 더 짙어짐 */
+    transform: scale(1.1); 
+    box-shadow: 0 0 50px rgba(255, 255, 0, 0.8); 
   }
 }
 
