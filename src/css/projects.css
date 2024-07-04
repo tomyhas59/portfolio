@@ -69,45 +69,41 @@
 
 .projectPageWrapper {
   height: 100vh;
-  overflow: auto;
+  overflow: hidden;
 }
 
-@keyframes slideDown {
-  from {
-    height: 100%;
-  }
-  to {
-    height: 0;
-  }
-}
-
-@keyframes slideRight {
+@keyframes openLeftDoor {
   from {
     left: 0;
   }
   to {
-    left: -100%;
+    left: -50%;
   }
 }
 
-@keyframes slideLeft {
+@keyframes openRightDoor {
   from {
     right: 0;
   }
   to {
-    right: -100%;
+    right: -50%;
   }
 }
 
-.curtain {
+.leftDoor,
+.rightDoor {
   z-index: 99999;
   position: absolute;
-  width: 100%;
+  width: 50%;
   height: 100%;
-  background-image: url("../img/curtain.png");
+  background-image: url("../img/leftDoor.png");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.rightDoor {
+  background-image: url("../img/rightDoor.png");
+  right: 0;
 }
 
 .projectPageContent {
@@ -232,6 +228,10 @@
     width: 250px;
     font-size: 1rem;
     padding: 0 1rem 2rem 1rem;
+  }
+
+  .description {
+    height: 20px;
   }
   .leftArrow {
     left: 0;
