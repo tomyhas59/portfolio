@@ -68,7 +68,6 @@
 /*projectPageWrapper 부모 요소*/
 
 .projectPageWrapper {
-  height: 100vh;
   overflow: hidden;
 }
 
