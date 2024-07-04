@@ -65,9 +65,9 @@
 
 /*profect page*/
 
-/*projectPageWrapper 부모 요소*/
-
 .projectPageWrapper {
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
