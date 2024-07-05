@@ -223,13 +223,17 @@
   text-align: right;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .card {
     width: 250px;
     font-size: 1rem;
     padding: 0 1rem 2rem 1rem;
   }
 
+  .projectPageWrapper {
+    width: 100%;
+    overflow: hidden;
+  }
   .description {
     height: 20px;
   }
