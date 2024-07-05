@@ -14,7 +14,6 @@ const ProjectPage: React.FC<{
   const navigator = useNavigate();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     const $leftDoor = document.querySelector(".leftDoor") as HTMLElement | null;
     const $rightDoor = document.querySelector(
       ".rightDoor"

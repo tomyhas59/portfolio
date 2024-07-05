@@ -1,4 +1,5 @@
 /*projects*/
+
 .projectsWrapper {
   display: flex;
   flex-direction: column;
@@ -222,7 +223,7 @@
   text-align: right;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
   .card {
     width: 250px;
     font-size: 1rem;
