@@ -67,7 +67,9 @@
 /*profect page*/
 
 .projectPageWrapper {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
   overflow: hidden;
 }
 
@@ -230,10 +232,6 @@
     padding: 0 1rem 2rem 1rem;
   }
 
-  .projectPageWrapper {
-    width: 100%;
-    overflow: hidden;
-  }
   .description {
     height: 20px;
   }
