@@ -9,9 +9,9 @@ const Contact = ({ id }: ContactProps) => {
   };
 
   return (
-    <section className="contactWrapper" id={id}>
-      <h2 className="contactTitle">Contact</h2>
-      <div className="contactContent">
+    <section className="contact-wrapper" id={id}>
+      <h2 className="contact-title">Contact</h2>
+      <div className="contact-content">
         <p>HP : 010-7170-5926</p>
         <p>Email : yh9035926@naver.com</p>
         <p>
@@ -21,7 +21,7 @@ const Contact = ({ id }: ContactProps) => {
           </a>
         </p>
       </div>
-      <FaArrowUp className="upButton" onClick={scrollTop} />
+      <FaArrowUp className="up-button" onClick={scrollTop} />
     </section>
   );
 };

@@ -3,7 +3,6 @@ import projectsData from "../data/projects.json";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useEffect } from "react";
 
 const ProjectPage: React.FC<{
   isDarkMode: boolean;
@@ -13,17 +12,6 @@ const ProjectPage: React.FC<{
   const project = projectsData.find((project) => project.id === Number(id));
   const navigator = useNavigate();
 
-  useEffect(() => {
-    const $leftDoor = document.querySelector(".leftDoor") as HTMLElement | null;
-    const $rightDoor = document.querySelector(
-      ".rightDoor"
-    ) as HTMLElement | null;
-    if ($leftDoor && $rightDoor) {
-      $leftDoor.style.animation = "openLeftDoor 2s ease-in-out 0.8s forwards";
-      $rightDoor.style.animation = "openRightDoor 2s ease-in-out 0.8s forwards";
-    }
-  }, []);
-
   if (!project) {
     return <div>프로젝트를 찾을 수 없습니다.</div>;
   }
@@ -32,9 +20,9 @@ const ProjectPage: React.FC<{
     const currentIndex = projectsData.findIndex(
       (project) => project.id === Number(id)
     );
-    const ProjectId = projectsData[currentIndex + num].id;
+    const projectId = projectsData[currentIndex + num].id;
 
-    navigator(`/projects/${ProjectId}`);
+    navigator(`/projects/${projectId}`);
   };
 
   const nextProject = () => {
@@ -56,37 +44,35 @@ const ProjectPage: React.FC<{
   };
 
   return (
-    <div className="projectPageWrapper">
-      <div className="leftDoor"></div>
-      <div className="rightDoor"></div>
-      <div className="projectPageContent">
-        <button onClick={darkModeToggle} className="modeToggle">
+    <div className="project-page-wrapper">
+      <div className="project-page-content">
+        <button onClick={darkModeToggle} className="mode-toggle">
           {isDarkMode ? (
             <li className="moon">DARK</li>
           ) : (
             <li className="sun">LIGHT</li>
           )}
         </button>
-        <h2 className="projectName">{project.name}</h2>
+        <h2 className="project-name">{project.name}</h2>
         <p className="description">{project.description}</p>
-        <Slider {...settings} className="projectItem">
+        <Slider {...settings} className="project-item">
           {project.imgs.map((img, index) => (
             <a
-              className="projectLink"
+              className="project-link"
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
               key={index}
             >
               <img
-                className="projectImg"
+                className="project-img"
                 src={require(`../img/${img}`)}
                 alt={`${project.name} 이미지 ${index}`}
               />
             </a>
           ))}
         </Slider>
-        <div className="goToSite">
+        <div className="go-to-site">
           <a className="site" href="/">
             홈으로
           </a>
@@ -98,19 +84,19 @@ const ProjectPage: React.FC<{
           </a>
         </div>
         {project.detail && (
-          <div className="projectDetail">
-            <div className="clientDetail">
-              <div className="detailTitle">client</div>
+          <div className="project-detail">
+            <div className="client-detail">
+              <div className="detail-title">client</div>
               <ul>
                 {project.detail?.client.map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
             </div>
-            <div className="serverDetail">
+            <div className="server-detail">
               {project.detail?.server && (
                 <>
-                  <div className="detailTitle">server</div>
+                  <div className="detail-title">server</div>
                   <ul>
                     {project.detail.server.map((item, index) => (
                       <li key={index}>{item}</li>
@@ -123,12 +109,12 @@ const ProjectPage: React.FC<{
         )}
       </div>
       {id === "1" ? null : (
-        <button className="prevProject" onClick={prevProject}>
+        <button className="prev-project" onClick={prevProject}>
           prev &nbsp;
         </button>
       )}
       {id === `${projectsData.length}` ? null : (
-        <button className="nextProject" onClick={nextProject}>
+        <button className="next-project" onClick={nextProject}>
           &nbsp; next
         </button>
       )}

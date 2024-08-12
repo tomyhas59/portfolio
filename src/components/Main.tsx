@@ -24,7 +24,7 @@ const Main = ({ downButton }: ProjectsProps) => {
 
   return (
     <section className="main">
-      <div className="mainText">{typedText}</div>
+      <div className="main-text">{typedText}</div>
       <DownButton downButton={downButton} />
     </section>
   );

@@ -7,7 +7,7 @@ interface DownButtonProps {
 const DownButton = ({ downButton }: DownButtonProps) => {
   return (
     <div>
-      <FaArrowDown className="downButton" onClick={downButton} />
+      <FaArrowDown className="down-button" onClick={downButton} />
     </div>
   );
 };

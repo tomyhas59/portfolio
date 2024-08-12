@@ -66,10 +66,10 @@ const Projects = ({ id, downButton }: ProjectsProps) => {
   const [cards] = useState(table);
 
   return (
-    <section className="projectsWrapper" id={id}>
+    <section className="projects-wrapper" id={id}>
       <h2>Projects</h2>
       <FaArrowLeft
-        className="leftArrow"
+        className="left-arrow"
         onClick={() =>
           setGoToSlide((prev) => (prev !== undefined ? prev - 1 : 0))
         }
@@ -84,7 +84,7 @@ const Projects = ({ id, downButton }: ProjectsProps) => {
         />
       </div>
       <FaArrowRight
-        className="rightArrow"
+        className="right-arrow"
         onClick={() =>
           setGoToSlide((prev) => (prev !== undefined ? prev + 1 : 0))
         }

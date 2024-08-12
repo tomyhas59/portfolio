@@ -1,6 +1,5 @@
-/*projects*/
-
-.projectsWrapper {
+/* projects */
+.projects-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,86 +28,56 @@
   border-radius: 20px;
 }
 
-.card .goToProject {
+.card .go-to-project {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
   font-weight: bold;
-  &:hover {
-    text-decoration: underline;
-  }
 }
+
+.card .go-to-project:hover {
+  text-decoration: underline;
+}
+
 .card span {
   position: absolute;
   right: 20%;
   color: red;
 }
 
-.leftArrow,
-.rightArrow {
+.left-arrow,
+.right-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 3rem;
   color: #545252;
-  right: 10%;
   z-index: 1000;
-  &:hover {
-    color: darkslategrey;
-    cursor: pointer;
-  }
 }
 
-.leftArrow {
+.left-arrow:hover,
+.right-arrow:hover {
+  color: darkslategrey;
+}
+
+.left-arrow {
   left: 10%;
 }
 
-/*profect page*/
+.right-arrow {
+  right: 10%;
+}
 
-.projectPageWrapper {
+/* project page */
+.project-page-wrapper {
   width: 100vw;
   height: 100vh;
   position: relative;
   overflow: hidden;
 }
 
-@keyframes openLeftDoor {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes openRightDoor {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
-
-.leftDoor,
-.rightDoor {
-  z-index: 99999;
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background-image: url("../img/leftDoor.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
-.rightDoor {
-  background-image: url("../img/rightDoor.png");
-  right: 0;
-}
-
-.projectPageContent {
+.project-page-content {
   margin-top: 50px;
   text-align: center;
   display: flex;
@@ -117,7 +86,7 @@
   overflow: hidden;
 }
 
-.projectName {
+.project-name {
   font-size: 32px;
   font-weight: bold;
 }
@@ -127,15 +96,16 @@
   font-size: 16px;
 }
 
-.projectItem {
+.project-item {
   width: 500px;
   margin: 50px auto;
-  a {
-    width: 400px !important;
-  }
 }
 
-.projectImg {
+.project-item a {
+  width: 400px !important;
+}
+
+.project-img {
   width: 400px !important;
   height: 200px;
   border-radius: 20px;
@@ -143,11 +113,12 @@
   border: 2px solid silver;
 }
 
-.goToSite {
+.go-to-site {
   position: absolute;
   top: 5%;
   right: 7%;
 }
+
 .site {
   display: inline-block;
   margin-right: 10px;
@@ -159,37 +130,40 @@
   text-decoration: underline;
 }
 
-.projectDetail {
+.project-detail {
   display: flex;
   justify-content: center;
   margin-top: -25px;
-
-  > div {
-    border-radius: 15px;
-    margin: 2px;
-    text-align: center;
-    background-image: linear-gradient(to bottom, #a4e8fd, #c5e8f3, #f7f9f9);
-  }
-  ul {
-    width: 300px;
-    padding: 10px;
-    font-size: 12px;
-  }
-  li {
-    list-style: decimal inside;
-    word-break: keep-all;
-    margin: 5px auto;
-    width: 250px;
-    text-align: left;
-    text-indent: -18px;
-    padding-left: 18px;
-    &::marker {
-      font-weight: bold;
-    }
-  }
 }
 
-.detailTitle {
+.project-detail > div {
+  border-radius: 15px;
+  margin: 2px;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #a4e8fd, #c5e8f3, #f7f9f9);
+}
+
+.project-detail ul {
+  width: 300px;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.project-detail li {
+  list-style: decimal inside;
+  word-break: keep-all;
+  margin: 5px auto;
+  width: 250px;
+  text-align: left;
+  text-indent: -18px;
+  padding-left: 18px;
+}
+
+.project-detail li::marker {
+  font-weight: bold;
+}
+
+.detail-title {
   margin-top: 10px;
   font-size: 24px;
   font-weight: bold;
@@ -201,28 +175,34 @@
   color: black !important;
 }
 
-.nextProject,
-.prevProject {
+.next-project,
+.prev-project {
   position: absolute;
   font-size: 17px;
   width: 100px;
   height: 100px;
   border-radius: 50px;
-  right: -50px;
   background-color: rgb(167, 167, 167);
   top: 40%;
   cursor: pointer;
   border: none;
   text-align: left;
-  &:hover {
-    background-color: rgb(216, 215, 215);
-    color: #4f5151;
-  }
 }
 
-.prevProject {
+.next-project:hover,
+.prev-project:hover {
+  background-color: rgb(216, 215, 215);
+  color: #4f5151;
+}
+
+.prev-project {
   left: -50px;
   text-align: right;
+}
+
+.next-project {
+  right: -50px;
+  text-align: left;
 }
 
 @media (max-width: 480px) {
@@ -234,37 +214,39 @@
 
   .description {
     height: 20px;
+    width: 300px;
   }
-  .leftArrow {
+
+  .left-arrow {
     left: 0;
   }
 
-  .rightArrow {
+  .right-arrow {
     right: 0;
   }
-  .description {
-    width: 300px;
-  }
-  .goToSite {
+
+  .go-to-site {
     font-size: 12px;
   }
 
-  .projectItem {
+  .project-item {
     width: 77%;
-    a {
-      width: 250px !important;
-    }
   }
 
-  .projectImg {
+  .project-item a {
+    width: 250px !important;
+  }
+
+  .project-img {
     width: 250px !important;
     height: 150px;
   }
-  .detailTitle {
+
+  .detail-title {
     font-size: 12px;
   }
 
-  .projectDetail {
+  .project-detail {
     ul {
       width: 150px;
       padding: 5px;
@@ -275,14 +257,16 @@
       width: 110px;
     }
   }
-  .nextProject,
-  .prevProject {
+
+  .next-project,
+  .prev-project {
     font-size: 10px;
     width: 50px;
     height: 50px;
     right: -25px;
   }
-  .prevProject {
+
+  .prev-project {
     left: -25px;
   }
 

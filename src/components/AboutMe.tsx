@@ -38,10 +38,10 @@ const AboutMe = ({ id, downButton }: AboutMeProps) => {
   ];
 
   return (
-    <section className="aboutMeWrapper" id={id}>
-      <div className="aboutMe">
-        <h2 className="aboutMeTitle">About Me</h2>
-        <div className="aboutMeContent">
+    <section className="about-me-wrapper" id={id}>
+      <div className="about-me">
+        <h2 className="about-me-title">About Me</h2>
+        <div className="about-me-content">
           <p>개발자라는 직업의 매력에 빠져 개발자가 되기 위해</p>
           <p>매일 한 걸음씩 나아가고 있습니다. </p>
           <p>내가 만든 세상을 다른 사람들에게 보여줄 수 있고</p>
@@ -54,9 +54,9 @@ const AboutMe = ({ id, downButton }: AboutMeProps) => {
       </div>
       <div className="skills">
         <div>SKILLS</div>
-        <div className="skillImgs">
+        <div className="skill-imgs">
           {skills.map((item, index) => (
-            <img key={index} className="skillImg" src={item} alt={`${item}`} />
+            <img key={index} className="skill-img" src={item} alt={`${item}`} />
           ))}
         </div>
       </div>
