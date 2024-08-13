@@ -60,3 +60,19 @@ body.dark-mode .slick-next:before,
 body.dark-mode .slick-dots li button:before {
   color: white !important;
 }
+
+body.dark-mode .site:hover > .icon {
+  color: #6b6a6a;
+}
+
+body.dark-mode .site::before {
+  background: silver;
+}
+
+body.dark-mode {
+  .slick-prev:before,
+  .slick-next:before,
+  .slick-dots li button:before {
+    color: white !important;
+  }
+}

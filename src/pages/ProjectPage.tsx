@@ -60,13 +60,13 @@ const ProjectPage: React.FC<{
       </button>
       <div className="go-to-site">
         <a className="site" href="/">
-          <FontAwesomeIcon icon={faHome} />
+          <FontAwesomeIcon icon={faHome} className="icon" />
         </a>
         <a className="site" href={project.url} target="blank">
-          <FontAwesomeIcon icon={faGlobe} />
+          <FontAwesomeIcon icon={faGlobe} className="icon" />
         </a>
         <a className="site" href={project.gitHub} target="blank">
-          <FontAwesomeIcon icon={faCodeBranch} />
+          <FontAwesomeIcon icon={faCodeBranch} className="icon" />
         </a>
       </div>
 
