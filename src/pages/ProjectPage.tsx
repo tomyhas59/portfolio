@@ -3,6 +3,12 @@ import projectsData from "../data/projects.json";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHome,
+  faGlobe,
+  faCodeBranch,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ProjectPage: React.FC<{
   isDarkMode: boolean;
@@ -45,14 +51,26 @@ const ProjectPage: React.FC<{
 
   return (
     <div className="project-page-wrapper">
+      <button onClick={darkModeToggle} className="mode-toggle">
+        {isDarkMode ? (
+          <li className="moon">DARK</li>
+        ) : (
+          <li className="sun">LIGHT</li>
+        )}
+      </button>
+      <div className="go-to-site">
+        <a className="site" href="/">
+          <FontAwesomeIcon icon={faHome} />
+        </a>
+        <a className="site" href={project.url} target="blank">
+          <FontAwesomeIcon icon={faGlobe} />
+        </a>
+        <a className="site" href={project.gitHub} target="blank">
+          <FontAwesomeIcon icon={faCodeBranch} />
+        </a>
+      </div>
+
       <div className="project-page-content">
-        <button onClick={darkModeToggle} className="mode-toggle">
-          {isDarkMode ? (
-            <li className="moon">DARK</li>
-          ) : (
-            <li className="sun">LIGHT</li>
-          )}
-        </button>
         <h2 className="project-name">{project.name}</h2>
         <p className="description">{project.description}</p>
         <Slider {...settings} className="project-item">
@@ -72,17 +90,7 @@ const ProjectPage: React.FC<{
             </a>
           ))}
         </Slider>
-        <div className="go-to-site">
-          <a className="site" href="/">
-            홈으로
-          </a>
-          <a className="site" href={project.url} target="blank">
-            사이트
-          </a>
-          <a className="site" href={project.gitHub} target="blank">
-            깃허브
-          </a>
-        </div>
+
         {project.detail && (
           <div className="project-detail">
             <div className="client-detail">

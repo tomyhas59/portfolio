@@ -77,42 +77,6 @@
   overflow: hidden;
 }
 
-.project-page-content {
-  margin-top: 50px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-}
-
-.project-name {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.description {
-  width: 700px;
-  font-size: 16px;
-}
-
-.project-item {
-  width: 500px;
-  margin: 50px auto;
-}
-
-.project-item a {
-  width: 400px !important;
-}
-
-.project-img {
-  width: 400px !important;
-  height: 200px;
-  border-radius: 20px;
-  margin: 0 auto;
-  border: 2px solid silver;
-}
-
 .go-to-site {
   position: absolute;
   top: 5%;
@@ -128,6 +92,38 @@
 
 .site:hover {
   text-decoration: underline;
+}
+
+.project-page-content {
+  margin-top: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-name {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.description {
+  width: 700px;
+  font-size: 16px;
+}
+
+.project-item {
+  width: 600px;
+  margin: 50px auto;
+  border-radius: 20px;
+}
+
+.project-img {
+  width: 99%;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 2px solid silver;
 }
 
 .project-detail {
@@ -173,6 +169,9 @@
 .slick-next:before {
   font-size: 50px !important;
   color: black !important;
+}
+.slick-prev:before {
+  margin-left: -50px;
 }
 
 .next-project,
