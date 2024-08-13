@@ -36,10 +36,6 @@ body.dark-mode #list.active {
   background-image: linear-gradient(to right, #fff, #fff);
 }
 
-body.dark-mode .project-detail > div {
-  background-image: linear-gradient(to bottom, #555555, #929191, #6f6767);
-}
-
 body.dark-mode .down-button,
 body.dark-mode .up-button,
 body.dark-mode .right-arrow,
@@ -74,5 +70,18 @@ body.dark-mode {
   .slick-next:before,
   .slick-dots li button:before {
     color: white !important;
+  }
+
+  .project-detail > div span:nth-child(1) {
+    background: linear-gradient(90deg, transparent, #fff);
+  }
+  .project-detail > div span:nth-child(2) {
+    background: linear-gradient(180deg, transparent, #fff);
+  }
+  .project-detail > div span:nth-child(3) {
+    background: linear-gradient(270deg, transparent, #fff);
+  }
+  .project-detail > div span:nth-child(4) {
+    background: linear-gradient(360deg, transparent, #fff);
   }
 }
