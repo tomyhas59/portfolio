@@ -3,6 +3,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.project-title {
+  opacity: 0;
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
 }
 
 .projects {
@@ -17,9 +23,12 @@
 .card {
   background-color: rgb(83, 213, 222);
   width: 500px;
-  padding: 0 2rem 3rem 2rem;
+  padding: 0 2rem 1.5rem 2rem;
   font-size: 2rem;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card img {
@@ -27,22 +36,42 @@
   width: 100%;
   border-radius: 20px;
 }
-
-.card .go-to-project {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
+.go-to-project {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
   font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  margin: 0 auto;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 1s;
 }
 
-.card .go-to-project:hover {
-  text-decoration: underline;
-}
-
-.card span {
+.go-to-project::before {
+  content: "";
   position: absolute;
-  right: 20%;
-  color: red;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: transform 1s;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.go-to-project:hover {
+  color: #007bff;
+  background-color: white;
+}
+
+.go-to-project:hover::before {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .left-arrow,
@@ -74,7 +103,7 @@
   width: 100vw;
   height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .go-to-site {

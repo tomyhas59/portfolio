@@ -53,23 +53,22 @@ const App: React.FC = () => {
   };
 
   const showProjects = (sectionId: string) => {
+    const projectTitle: HTMLElement | null =
+      document.querySelector(".project-title");
     const projects: HTMLElement | null = document.querySelector(".projects");
 
-    const changeStyle = (
-      opacity: number,
-      transform: number,
-      visibility: string
-    ) => {
+    const changeStyle = (opacity: number, transform: number) => {
       if (projects) {
         projects.style.opacity = opacity.toString();
         projects.style.transform = `translateY(${transform}px)`;
-        projects.style.visibility = visibility;
+      }
+      if (projectTitle) {
+        projectTitle.style.opacity = opacity.toString();
+        projectTitle.style.transform = `translateX(${transform}px)`;
       }
     };
 
-    sectionId === "projects"
-      ? changeStyle(1, 0, "visible")
-      : changeStyle(0, -1000, "hidden");
+    sectionId === "projects" ? changeStyle(1, 0) : changeStyle(0, -1000);
   };
 
   const showContact = (sectionId: string) => {
@@ -172,9 +171,9 @@ const App: React.FC = () => {
                   )}
                   <button onClick={darkModeToggle} className="mode-toggle">
                     {isDarkMode ? (
-                      <div className="moon">DARK</div>
+                      <div className="moon"></div>
                     ) : (
-                      <div className="sun">LIGHT</div>
+                      <div className="sun"></div>
                     )}
                   </button>
                 </ul>

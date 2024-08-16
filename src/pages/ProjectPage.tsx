@@ -52,11 +52,7 @@ const ProjectPage: React.FC<{
   return (
     <div className="project-page-wrapper">
       <button onClick={darkModeToggle} className="mode-toggle">
-        {isDarkMode ? (
-          <li className="moon">DARK</li>
-        ) : (
-          <li className="sun">LIGHT</li>
-        )}
+        {isDarkMode ? <li className="moon"></li> : <li className="sun"></li>}
       </button>
       <div className="go-to-site">
         <a className="site" href="/">

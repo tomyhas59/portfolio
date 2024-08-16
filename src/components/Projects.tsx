@@ -37,10 +37,10 @@ const Card = ({
       onMouseLeave={() => setShown(false)}
     >
       <img src={imagen} alt="" />
-      <Link to={`/projects/${id}`} className="goToProject">
+
+      <Link to={`/projects/${id}`} className="go-to-project">
         {name}
       </Link>
-      <span>←Click</span>
     </animated.div>
   );
 };
@@ -67,7 +67,7 @@ const Projects = ({ id, downButton }: ProjectsProps) => {
 
   return (
     <section className="projects-wrapper" id={id}>
-      <h2>Projects</h2>
+      <h2 className="project-title">Projects</h2>
       <FaArrowLeft
         className="left-arrow"
         onClick={() =>

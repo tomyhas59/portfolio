@@ -27,13 +27,13 @@ body.dark-mode {
   background-image: url("./img/dark.png");
 }
 
-body.dark-mode #list {
+body.dark-mode #list,
+body.dark-mode #list:hover {
   background-image: linear-gradient(to right, #fff, #fff);
 }
 
-body.dark-mode #list:hover,
 body.dark-mode #list.active {
-  background-image: linear-gradient(to right, #fff, #fff);
+  background-image: linear-gradient(to right, crimson, crimson);
 }
 
 body.dark-mode .down-button,
