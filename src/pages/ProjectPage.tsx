@@ -51,9 +51,6 @@ const ProjectPage: React.FC<{
 
   return (
     <div className="project-page-wrapper">
-      <button onClick={darkModeToggle} className="mode-toggle">
-        {isDarkMode ? <li className="moon"></li> : <li className="sun"></li>}
-      </button>
       <div className="go-to-site">
         <a className="site" href="/">
           <FontAwesomeIcon icon={faHome} className="icon" />
@@ -64,6 +61,9 @@ const ProjectPage: React.FC<{
         <a className="site" href={project.gitHub} target="blank">
           <FontAwesomeIcon icon={faCodeBranch} className="icon" />
         </a>
+        <button onClick={darkModeToggle} className="mode-toggle">
+          {isDarkMode ? <li className="moon"></li> : <li className="sun"></li>}
+        </button>
       </div>
 
       <div className="project-page-content">

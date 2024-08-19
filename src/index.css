@@ -27,6 +27,10 @@ body.dark-mode {
   background-image: url("./img/dark.png");
 }
 
+body.dark-mode .mode-toggle {
+  background-color: rgb(9, 4, 54);
+}
+
 body.dark-mode #list,
 body.dark-mode #list:hover {
   background-image: linear-gradient(to right, #fff, #fff);

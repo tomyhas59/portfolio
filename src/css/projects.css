@@ -47,31 +47,11 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  overflow: hidden;
-  transition: all 1s;
-}
-
-.go-to-project::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: transform 1s;
-  transform: translate(-50%, -50%) scale(0);
-  border-radius: 50%;
-  z-index: 0;
 }
 
 .go-to-project:hover {
   color: #007bff;
   background-color: white;
-}
-
-.go-to-project:hover::before {
-  transform: translate(-50%, -50%) scale(1);
 }
 
 .left-arrow,
@@ -108,8 +88,8 @@
 
 .go-to-site {
   position: absolute;
-  top: 5%;
-  right: 7%;
+  top: 15px;
+  right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
