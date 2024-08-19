@@ -47,10 +47,12 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .go-to-project:hover {
   color: #007bff;
+  transform: translateY(4px);
   background-color: white;
 }
 
@@ -79,11 +81,26 @@
 }
 
 /* project page */
+
 .project-page-wrapper {
   width: 100vw;
   height: 100vh;
   position: relative;
   overflow-x: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  animation: onPage 0.6s ease-out forwards;
+}
+
+@keyframes onPage {
+  0% {
+    opacity: 0;
+    scale: 1.1;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
 }
 
 .go-to-site {

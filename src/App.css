@@ -38,6 +38,8 @@
   background-size: 100% 4px;
   color: crimson;
   background-image: linear-gradient(to right, crimson, crimson);
+  text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff,
+    -1px 1px 0 #fff;
 }
 
 section {
@@ -243,15 +245,19 @@ footer {
   overflow: hidden;
 }
 
+.mode-toggle:hover {
+  transform: scale(1.1);
+}
+
 .sun {
   width: 20px;
   height: 20px;
-  background-color: rgb(245, 130, 6);
+  background: radial-gradient(circle, #ffd700 40%, #ff4500 70%, #ff6347);
   border-radius: 50%;
   border: none;
-  box-shadow: 0 0 30px rgba(255, 255, 0, 0.6);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
   cursor: pointer;
-  transition: 0.5s;
+  transition: all 0.5s;
   position: relative;
 }
 
@@ -309,4 +315,30 @@ footer {
   left: 0;
   box-shadow: -5px 10px 0 0 yellow, -15px 15px 0 0 yellow, -25px 5px 0 0 yellow,
     -10px 3px 0 0 yellow;
+}
+
+.typing {
+  overflow: hidden;
+  border-right: 0.15em solid orange; /* Cursor */
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
 }
