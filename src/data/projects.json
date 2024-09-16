@@ -17,7 +17,7 @@
       "server": [
         "node.js와 express로 서버 생성",
         "jwt를 이용한 로그인 인증 구현",
-        "mysql Sequelize로 데이터 관리",
+        "postgreSQL Sequelize로 데이터 관리",
         "Socket.IO를 사용하여 실시간 웹 소켓 기능"
       ]
     }
