@@ -59,5 +59,17 @@
     "detail": {
       "client": ["JavaScript와 React 적용"]
     }
+  },
+  {
+    "id": 4,
+    "name": "가계부",
+    "mainImg": ["household1.png"],
+    "imgs": ["household1.png", "household2.png"],
+    "description": "웹 가계부",
+    "url": "https://tomyhas59.github.io/household-book",
+    "gitHub": "https://github.com/tomyhas59/household-book",
+    "detail": {
+      "client": ["localforage 데이터 저장"]
+    }
   }
 ]
