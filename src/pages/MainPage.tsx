@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import AboutMe from "../components/AboutMe";
 import Contact from "../components/Contact";
 import Main from "../components/Main";
-import ProjectPage from "./ProjectPage";
 import Projects from "../components/Projects";
 
 const MainPage: React.FC<{
