@@ -7,7 +7,7 @@
 
 ## 배포 링크
 
-[포트폴리오 사이트](https://tmspor.netlify.app)
+[포트폴리오 사이트](https://tmsport.netlify.app)
 
 ## 주요 기능
 
