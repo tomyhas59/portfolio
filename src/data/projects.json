@@ -32,7 +32,7 @@
       "shopProducts.png",
       "shopCart.png"
     ],
-    "description": "간단한 회원가입, 로그인, 장바구니 담기 기능 쇼핑몰 사이트",
+    "description": "간단한 회원가입, 로그인, 상품 리뷰, 장바구니 담기 기능 쇼핑몰 사이트",
     "url": "https://tmshop.vercel.app/",
     "gitHub": "https://github.com/tomyhas59/shop",
     "detail": {
