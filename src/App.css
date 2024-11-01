@@ -243,10 +243,11 @@ footer {
   border: none;
   border-radius: 20px;
   overflow: hidden;
+  transition: transform 1s;
 }
 
 .mode-toggle:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .sun {
