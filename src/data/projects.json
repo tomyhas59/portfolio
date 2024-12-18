@@ -12,7 +12,7 @@
         "상태 관리를 위한 Redux",
         "TypeScript로 코드 안정성 확보",
         "styled-components를 통한 유연한 스타일링",
-        "Socket.IO로 실시간 메시징 기능 구현"
+        "Socket.IO로 실시간 채팅 및 알림 기능 구현"
       ],
       "server": [
         "Node.js와 Express로 구축한 서버",
