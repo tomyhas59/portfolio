@@ -13,11 +13,11 @@ interface ProjectsProps {
 
 const Card = ({
   id,
-  imagen,
+  image,
   name,
 }: {
   id: number;
-  imagen: any;
+  image: any;
   name: string;
 }) => {
   const [show, setShown] = useState(false);
@@ -36,7 +36,7 @@ const Card = ({
       onMouseEnter={() => setShown(true)}
       onMouseLeave={() => setShown(false)}
     >
-      <img src={imagen} alt="" />
+      <img src={image} alt="" />
 
       <Link to={`/projects/${id}`} className="go-to-project">
         {name}
@@ -53,7 +53,7 @@ const Projects = ({ id, downButton }: ProjectsProps) => {
     content: (
       <Card
         id={project.id}
-        imagen={require(`../img/${project.mainImg[0]}`)}
+        image={require(`../img/${project.mainImg[0]}`)}
         name={project.name}
       />
     ),
