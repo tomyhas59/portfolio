@@ -8,8 +8,8 @@
       "SNSLogin.png",
       "SNSPost.png",
       "SNSChat.png",
-      "SNSInfo",
-      "SNSDark"
+      "SNSInfo.png",
+      "SNSDark.png"
     ],
     "description": "회원가입, 로그인, 게시글 CRUD와 팔로우, 추천 및 검색 기능을 구현한 SNS 사이트",
     "url": "https://tomyhasblog.vercel.app",
@@ -72,7 +72,7 @@
     "id": 4,
     "name": "가계부",
     "mainImg": ["household1.png"],
-    "imgs": ["householdMain", "household1.png", "household2.png"],
+    "imgs": ["householdMain.png", "household1.png", "household2.png"],
     "description": "웹 기반 가계부 애플리케이션",
     "url": "https://tomyhas59.github.io/household-book",
     "gitHub": "https://github.com/tomyhas59/household-book",
