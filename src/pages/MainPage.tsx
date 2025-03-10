@@ -150,13 +150,15 @@ const MainPage: React.FC<{
                 section.slice(1).replace("-", " ")}
             </li>
           ))}
-          <button onClick={darkModeToggle} className="mode-toggle">
-            {isDarkMode ? (
-              <div className="moon"></div>
-            ) : (
-              <div className="sun"></div>
-            )}
-          </button>
+          <li>
+            <button onClick={darkModeToggle} className="mode-toggle">
+              {isDarkMode ? (
+                <div className="moon"></div>
+              ) : (
+                <div className="sun"></div>
+              )}
+            </button>
+          </li>
         </ul>
       </nav>
 

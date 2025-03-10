@@ -34,6 +34,10 @@
   background-image: linear-gradient(to right, black, black);
 }
 
+.section-list > li:last-child {
+  background-size: 0 4px;
+}
+
 .section-list > li.active {
   background-size: 100% 4px;
   color: crimson;
