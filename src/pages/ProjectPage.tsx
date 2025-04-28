@@ -90,10 +90,6 @@ const ProjectPage: React.FC<{
         {project.detail && (
           <div className="project-detail">
             <div className="client-detail">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
               <div className="detail-title">client</div>
               <ul>
                 {project.detail?.client.map((item, index) => (
@@ -102,10 +98,6 @@ const ProjectPage: React.FC<{
               </ul>
             </div>
             <div className="server-detail">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
               {project.detail?.server && (
                 <>
                   <div className="detail-title">server</div>
