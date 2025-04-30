@@ -53,7 +53,7 @@ const Projects = ({ id, downButton }: ProjectsProps) => {
     content: (
       <Card
         id={project.id}
-        image={require(`../img/${project.mainImg[0]}`)}
+        image={require(`../assets/img/${project.mainImg[0]}`)}
         name={project.name}
       />
     ),

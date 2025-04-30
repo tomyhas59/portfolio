@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background-image: url("./img/light.png");
+  background-image: url("./assets/img/light.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -25,7 +25,7 @@ a {
 /* Dark Mode Styles */
 body.dark-mode {
   color: floralwhite;
-  background-image: url("./img/dark.png");
+  background-image: url("./assets/img/dark.png");
 }
 
 body.dark-mode .mode-toggle {

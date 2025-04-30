@@ -5,7 +5,6 @@ import ProjectPage from "./pages/ProjectPage";
 import MainPage from "./pages/MainPage";
 
 const App: React.FC = () => {
-  // Dark mode state
   const [isDarkMode, setIsDarkMode] = useState(
     () => localStorage.getItem("darkMode") === "enabled"
   );

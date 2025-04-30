@@ -1,18 +1,18 @@
 import DownButton from "./DownButton";
-import CSS from "../img/skills/CSS.svg";
-import Firebase from "../img/skills/Firebase.svg";
-import Git from "../img/skills/Git.svg";
-import Github from "../img/skills/Github.svg";
-import GraphQL from "../img/skills/GraphQL.svg";
-import HTML from "../img/skills/HTML.svg";
-import JavaScript from "../img/skills/JavaScript.svg";
-import MySQL from "../img/skills/MySQL.svg";
-import NextJS from "../img/skills/NextJS.svg";
-import NodeJS from "../img/skills/NodeJS.svg";
-import React from "../img/skills/React.svg";
-import Redux from "../img/skills/Redux.svg";
-import Sass from "../img/skills/Sass.svg";
-import TypeScript from "../img/skills/TypeScript.svg";
+import CSS from "../assets/img/skills/CSS.svg";
+import Firebase from "../assets/img/skills/Firebase.svg";
+import Git from "../assets/img/skills/Git.svg";
+import Github from "../assets/img/skills/Github.svg";
+import GraphQL from "../assets/img/skills/GraphQL.svg";
+import HTML from "../assets/img/skills/HTML.svg";
+import JavaScript from "../assets/img/skills/JavaScript.svg";
+import MySQL from "../assets/img/skills/MySQL.svg";
+import NextJS from "../assets/img/skills/NextJS.svg";
+import NodeJS from "../assets/img/skills/NodeJS.svg";
+import React from "../assets/img/skills/React.svg";
+import Redux from "../assets/img/skills/Redux.svg";
+import Sass from "../assets/img/skills/Sass.svg";
+import TypeScript from "../assets/img/skills/TypeScript.svg";
 
 interface AboutMeProps {
   id: string;

@@ -80,7 +80,7 @@ const ProjectPage: React.FC<{
             >
               <img
                 className="project-img"
-                src={require(`../img/${img}`)}
+                src={require(`../assets/img/${img}`)}
                 alt={`${project.name} 이미지 ${index}`}
               />
             </a>
