@@ -45,6 +45,10 @@ const MainPage: React.FC<{
       document.querySelector(".project-title");
     const projects: HTMLElement | null = document.querySelector(".projects");
 
+    const leftArrow: HTMLElement | null = document.querySelector(".left-arrow");
+    const rightArrow: HTMLElement | null =
+      document.querySelector(".right-arrow");
+
     const changeStyle = (opacity: number, transform: number) => {
       if (projects) {
         projects.style.opacity = opacity.toString();
@@ -54,6 +58,14 @@ const MainPage: React.FC<{
         projectTitle.style.opacity = opacity.toString();
         projectTitle.style.transform = `translateX(${transform}px)`;
       }
+      setTimeout(() => {
+        if (leftArrow) {
+          leftArrow.style.opacity = opacity.toString();
+        }
+        if (rightArrow) {
+          rightArrow.style.opacity = opacity.toString();
+        }
+      }, 1000);
     };
 
     sectionId === "projects" ? changeStyle(1, 0) : changeStyle(0, -1000);
