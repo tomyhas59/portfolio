@@ -1,103 +1,166 @@
 import { useEffect, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import AboutMe from "../components/AboutMe";
 import Contact from "../components/Contact";
 import Main from "../components/Main";
 import Projects from "../components/Projects";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const MainPage: React.FC<{
   isDarkMode: boolean;
   darkModeToggle: () => void;
 }> = ({ isDarkMode, darkModeToggle }) => {
+  const [activeSection, setActiveSection] = useState<string>("home");
+
   useEffect(() => {
     document.body.classList.toggle("dark-mode", isDarkMode);
   }, [isDarkMode]);
 
-  const [activeSection, setActiveSection] = useState<string>("home");
+  useEffect(() => {
+    // ScrollTrigger: 섹션 활성화 감지
+    const sections = ["home", "about-me", "projects", "contact"];
 
-  const showAboutMe = (sectionId: string) => {
-    const aboutMeTitle: HTMLElement | null =
-      document.querySelector(".about-me-title");
-    const aboutMeContent: HTMLElement | null =
-      document.querySelector(".about-me-content");
-    const skills: HTMLElement | null = document.querySelector(".skills");
+    sections.forEach((section) => {
+      ScrollTrigger.create({
+        trigger: `#${section}`,
+        start: "top center",
+        end: "bottom center",
+        onEnter: () => setActiveSection(section),
+        onEnterBack: () => setActiveSection(section),
+      });
+    });
 
-    const changeStyle = (opacity: number, transform: number) => {
-      if (aboutMeTitle) {
-        aboutMeTitle.style.opacity = opacity.toString();
-        aboutMeTitle.style.transform = `translateX(-${transform}px)`;
+    // GSAP 애니메이션 등록
+    gsap.fromTo(
+      ".about-me-title",
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        scrollTrigger: {
+          trigger: "#about-me",
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+        duration: 1,
       }
-      if (aboutMeContent) {
-        aboutMeContent.style.opacity = opacity.toString();
-        aboutMeContent.style.transform = `translateX(${transform}px)`;
+    );
+
+    gsap.fromTo(
+      ".about-me-content",
+      { opacity: 0, x: 100 },
+      {
+        opacity: 1,
+        x: 0,
+        scrollTrigger: {
+          trigger: "#about-me",
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+        duration: 1,
       }
-      if (skills) {
-        setTimeout(() => {
-          skills.style.opacity = opacity.toString();
-        }, 1000);
+    );
+
+    gsap.fromTo(
+      ".skills",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#about-me",
+          start: "top 60%",
+          toggleActions: "play none none reverse",
+        },
+        duration: 1,
+        delay: 0.5,
       }
+    );
+
+    gsap.fromTo(
+      ".project-title",
+      { opacity: 0, x: -200 },
+      {
+        opacity: 1,
+        x: 0,
+        scrollTrigger: {
+          trigger: "#projects",
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+        duration: 1,
+      }
+    );
+
+    gsap.fromTo(
+      ".projects",
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: "#projects",
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+        duration: 1,
+      }
+    );
+
+    gsap.fromTo(
+      [".left-arrow", ".right-arrow"],
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#projects",
+          start: "top 60%",
+          toggleActions: "play none none reverse",
+        },
+        duration: 0.8,
+        delay: 0.8,
+      }
+    );
+
+    gsap.fromTo(
+      ".contact-title",
+      { opacity: 0, x: -100 },
+      {
+        opacity: 1,
+        x: 0,
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+        duration: 1,
+      }
+    );
+
+    gsap.fromTo(
+      ".contact-content",
+      { opacity: 0, x: 100 },
+      {
+        opacity: 1,
+        x: 0,
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+        duration: 1,
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
+  }, []);
 
-    sectionId === "about-me" ? changeStyle(1, 0) : changeStyle(0, 500);
-  };
-
-  const showProjects = (sectionId: string) => {
-    const projectTitle: HTMLElement | null =
-      document.querySelector(".project-title");
-    const projects: HTMLElement | null = document.querySelector(".projects");
-
-    const leftArrow: HTMLElement | null = document.querySelector(".left-arrow");
-    const rightArrow: HTMLElement | null =
-      document.querySelector(".right-arrow");
-
-    const changeStyle = (opacity: number, transform: number) => {
-      if (projects) {
-        projects.style.opacity = opacity.toString();
-        projects.style.transform = `translateY(${transform}px)`;
-      }
-      if (projectTitle) {
-        projectTitle.style.opacity = opacity.toString();
-        projectTitle.style.transform = `translateX(${transform}px)`;
-      }
-      setTimeout(() => {
-        if (leftArrow) {
-          leftArrow.style.opacity = opacity.toString();
-        }
-        if (rightArrow) {
-          rightArrow.style.opacity = opacity.toString();
-        }
-      }, 1000);
-    };
-
-    sectionId === "projects" ? changeStyle(1, 0) : changeStyle(0, -1000);
-  };
-
-  const showContact = (sectionId: string) => {
-    const contactTitle: HTMLElement | null =
-      document.querySelector(".contact-title");
-    const contactContent: HTMLElement | null =
-      document.querySelector(".contact-content");
-
-    const changeStyle = (opacity: number, transform: number) => {
-      if (contactTitle) {
-        contactTitle.style.opacity = opacity.toString();
-        contactTitle.style.transform = `translateX(-${transform}px)`;
-      }
-      if (contactContent) {
-        contactContent.style.opacity = opacity.toString();
-        contactContent.style.transform = `translateX(${transform}px)`;
-      }
-    };
-
-    sectionId === "contact" ? changeStyle(1, 0) : changeStyle(0, 500);
-  };
-
-  const downButton = (sectionId: string) => {
-    const targetOffset = document.getElementById(sectionId)?.offsetTop || 0;
-    window.scrollTo({ top: targetOffset, behavior: "smooth" });
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
+  const scrollToSection = (sectionName: string) => {
+    const section = document.getElementById(sectionName);
     if (section) {
       window.scrollTo({ top: section.offsetTop, behavior: "smooth" });
     } else {
@@ -105,47 +168,10 @@ const MainPage: React.FC<{
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const aboutMeOffset = document.getElementById("about-me")?.offsetTop || 0;
-      const projectsOffset =
-        document.getElementById("projects")?.offsetTop || 0;
-      const contactOffset = document.getElementById("contact")?.offsetTop || 0;
-
-      if (scrollPosition < aboutMeOffset - 500) {
-        setActiveSection("home");
-        showAboutMe("");
-      } else if (
-        scrollPosition >= aboutMeOffset - 100 &&
-        scrollPosition < aboutMeOffset + 500
-      ) {
-        setActiveSection("about-me");
-        showAboutMe("about-me");
-        showProjects("");
-      } else if (
-        scrollPosition >= projectsOffset - 100 &&
-        scrollPosition < projectsOffset + 500
-      ) {
-        setActiveSection("projects");
-        showProjects("projects");
-        showAboutMe("");
-        showContact("");
-      } else if (
-        scrollPosition >= contactOffset - 100 &&
-        scrollPosition < contactOffset + 500
-      ) {
-        setActiveSection("contact");
-        showProjects("");
-        showContact("contact");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const downButton = (sectionId: string) => {
+    const targetOffset = document.getElementById(sectionId)?.offsetTop || 0;
+    window.scrollTo({ top: targetOffset, behavior: "smooth" });
+  };
 
   return (
     <div className="app">
@@ -153,7 +179,6 @@ const MainPage: React.FC<{
         <ul className="section-list">
           {["home", "about-me", "projects", "contact"].map((section) => (
             <li
-              id="list"
               key={section}
               className={activeSection === section ? "active" : ""}
               onClick={() => scrollToSection(section)}
@@ -164,17 +189,13 @@ const MainPage: React.FC<{
           ))}
           <li>
             <button onClick={darkModeToggle} className="mode-toggle">
-              {isDarkMode ? (
-                <div className="moon"></div>
-              ) : (
-                <div className="sun"></div>
-              )}
+              {isDarkMode ? <div className="moon" /> : <div className="sun" />}
             </button>
           </li>
         </ul>
       </nav>
 
-      <Main downButton={() => downButton("about-me")} />
+      <Main id="home" downButton={() => downButton("about-me")} />
       <AboutMe id="about-me" downButton={() => downButton("projects")} />
       <Projects id="projects" downButton={() => downButton("contact")} />
       <Contact id="contact" />

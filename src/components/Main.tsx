@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import DownButton from "./DownButton";
 
 interface ProjectsProps {
+  id: string;
   downButton: () => void;
 }
 
-const Main = ({ downButton }: ProjectsProps) => {
+const Main = ({ id, downButton }: ProjectsProps) => {
   const text = " Hello, This is YongHyeon's portfolio!!";
   const [typedText, setTypedText] = useState("");
 
@@ -23,7 +24,7 @@ const Main = ({ downButton }: ProjectsProps) => {
   }, [typedText.length]);
 
   return (
-    <section className="main">
+    <section className="main" id={id}>
       <div className="main-text">{typedText}</div>
       <DownButton downButton={downButton} />
     </section>
