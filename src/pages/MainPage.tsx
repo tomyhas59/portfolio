@@ -18,11 +18,10 @@ const MainPage: React.FC<{
   useEffect(() => {
     document.body.classList.toggle("dark-mode", isDarkMode);
   }, [isDarkMode]);
-
   useEffect(() => {
-    // ScrollTrigger: 섹션 활성화 감지
     const sections = ["home", "about-me", "projects", "contact"];
 
+    // activeSection 감지
     sections.forEach((section) => {
       ScrollTrigger.create({
         trigger: `#${section}`,
@@ -33,64 +32,70 @@ const MainPage: React.FC<{
       });
     });
 
-    // GSAP 애니메이션 등록
+    // 🟦 About Me - 부드럽게 좌우로 들어오기
     gsap.fromTo(
       ".about-me-title",
-      { opacity: 0, x: -100 },
+      { opacity: 0, x: -150 },
       {
         opacity: 1,
         x: 0,
         scrollTrigger: {
           trigger: "#about-me",
-          start: "top 70%",
+          start: "top 80%",
           toggleActions: "play none none reverse",
         },
-        duration: 1,
+        duration: 1.2,
+        ease: "power3.out",
       }
     );
 
     gsap.fromTo(
       ".about-me-content",
-      { opacity: 0, x: 100 },
+      { opacity: 0, x: 150 },
       {
         opacity: 1,
         x: 0,
         scrollTrigger: {
           trigger: "#about-me",
-          start: "top 70%",
+          start: "top 80%",
           toggleActions: "play none none reverse",
         },
-        duration: 1,
+        duration: 1.2,
+        ease: "power3.out",
       }
     );
 
     gsap.fromTo(
       ".skills",
-      { opacity: 0 },
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
+        y: 0,
         scrollTrigger: {
           trigger: "#about-me",
-          start: "top 60%",
+          start: "top 75%",
           toggleActions: "play none none reverse",
         },
-        duration: 1,
-        delay: 0.5,
+        duration: 0.8,
+        delay: 0.3,
+        ease: "power2.out",
       }
     );
 
+    // 🟨 Projects - scale과 bounce
     gsap.fromTo(
       ".project-title",
-      { opacity: 0, x: -200 },
+      { opacity: 0, scale: 0.7 },
       {
         opacity: 1,
-        x: 0,
+        scale: 1,
         scrollTrigger: {
           trigger: "#projects",
-          start: "top 70%",
+          start: "top 80%",
           toggleActions: "play none none reverse",
         },
         duration: 1,
+        ease: "back.out(1.7)",
       }
     );
 
@@ -106,36 +111,41 @@ const MainPage: React.FC<{
           toggleActions: "play none none reverse",
         },
         duration: 1,
+        ease: "power3.out",
       }
     );
 
     gsap.fromTo(
       [".left-arrow", ".right-arrow"],
-      { opacity: 0 },
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
+        y: 0,
         scrollTrigger: {
           trigger: "#projects",
-          start: "top 60%",
+          start: "top 65%",
           toggleActions: "play none none reverse",
         },
         duration: 0.8,
-        delay: 0.8,
+        delay: 0.5,
+        ease: "power2.out",
       }
     );
 
+    // 🟥 Contact - 위에서 떨어지고, 왼쪽으로 들어오기
     gsap.fromTo(
       ".contact-title",
-      { opacity: 0, x: -100 },
+      { opacity: 0, y: -50 },
       {
         opacity: 1,
-        x: 0,
+        y: 0,
         scrollTrigger: {
           trigger: "#contact",
-          start: "top 70%",
+          start: "top 80%",
           toggleActions: "play none none reverse",
         },
         duration: 1,
+        ease: "bounce.out",
       }
     );
 
@@ -147,10 +157,12 @@ const MainPage: React.FC<{
         x: 0,
         scrollTrigger: {
           trigger: "#contact",
-          start: "top 70%",
+          start: "top 80%",
           toggleActions: "play none none reverse",
         },
         duration: 1,
+        delay: 0.3,
+        ease: "power2.out",
       }
     );
 
