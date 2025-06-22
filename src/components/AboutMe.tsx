@@ -42,13 +42,14 @@ const AboutMe = ({ id, downButton }: AboutMeProps) => {
       <div className="about-me">
         <h2 className="about-me-title">About Me</h2>
         <div className="about-me-content">
-          <p>개발자라는 직업의 매력에 빠져 개발자가 되기 위해</p>
-          <p>매일 한 걸음씩 나아가고 있습니다. </p>
-          <p>내가 만든 세상을 다른 사람들에게 보여줄 수 있고</p>
-          <p>같이 나눌 수 있다는 점이 매력인 것 같습니다.</p>
-          <p>또한 새로운 것을 배우고 에러를 해결하다 보면</p>
-          <p>성장하는 자신을 느낄 수 있고 성취감 또한 매우 높아서 </p>
-          <p>배우고자 하는 욕심이 더 생기는 것 같습니다.</p>
+          <p>React, Next.js, React Native 등 다양한 프론트엔드 기술을</p>
+          <p>직접 프로젝트로 경험해왔습니다.</p>
+          <p>Express와 Spring Boot로 백엔드까지 구현하며</p>
+          <p>전체 흐름을 이해하는 데 집중했습니다.</p>
+          <p>SNS, 쇼핑몰, 가계부 등 실사용 가능한 앱을</p>
+          <p>직접 설계하고 배포한 경험이 있습니다.</p>
+          <p>무언가를 만드는 것보다 어떻게 보이고</p>
+          <p>어떻게 느껴지는지에 더욱 관심을 갖고</p>
           <p>꾸준히 개발에 매진하여 성장하는 개발자가 되고 싶습니다.</p>
         </div>
       </div>
