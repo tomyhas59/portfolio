@@ -42,7 +42,7 @@ const AboutMe = ({ id, downButton }: AboutMeProps) => {
       <div className="about-me">
         <h2 className="about-me-title">About Me</h2>
         <div className="about-me-content">
-          <p>React, Next.js 등 다양한 프론트엔드 기술을</p>
+          <p>React, Next.js 등 다양한 프론트엔드 기술을 </p>
           <p>직접 프로젝트로 경험해왔습니다.</p>
           <p>Express와 Spring Boot로 백엔드까지 구현하며</p>
           <p>전체 흐름을 이해하는 데 집중했습니다.</p>
