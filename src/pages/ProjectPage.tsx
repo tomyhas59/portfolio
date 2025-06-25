@@ -10,6 +10,12 @@ import {
   faCodeBranch,
 } from "@fortawesome/free-solid-svg-icons";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const ProjectPage: React.FC<{
   isDarkMode: boolean;
   darkModeToggle: () => void;
@@ -17,6 +23,71 @@ const ProjectPage: React.FC<{
   const { id } = useParams();
   const project = projectsData.find((project) => project.id === Number(id));
   const navigator = useNavigate();
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".project-name",
+      { opacity: 0, y: -40 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".project-name",
+          start: "top 80%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".description",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: ".description",
+          start: "top 85%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".project-item",
+      { opacity: 0, scale: 0.95 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "power2.out",
+        delay: 0.4,
+        scrollTrigger: {
+          trigger: ".project-item",
+          start: "top 90%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".project-detail",
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: ".project-detail",
+          start: "top 90%",
+        },
+      }
+    );
+  }, [id]);
 
   if (!project) {
     return <div>프로젝트를 찾을 수 없습니다.</div>;
@@ -31,13 +102,8 @@ const ProjectPage: React.FC<{
     navigator(`/projects/${projectId}`);
   };
 
-  const nextProject = () => {
-    handleProject(1);
-  };
-
-  const prevProject = () => {
-    handleProject(-1);
-  };
+  const nextProject = () => handleProject(1);
+  const prevProject = () => handleProject(-1);
 
   const settings = {
     dots: true,

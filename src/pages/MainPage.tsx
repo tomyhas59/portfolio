@@ -32,7 +32,6 @@ const MainPage: React.FC<{
       });
     });
 
-    // 🟦 About Me - 부드럽게 좌우로 들어오기
     gsap.fromTo(
       ".about-me-title",
       { opacity: 0, x: -150 },
@@ -82,7 +81,6 @@ const MainPage: React.FC<{
       }
     );
 
-    // 🟨 Projects - scale과 bounce
     gsap.fromTo(
       ".project-title",
       { opacity: 0, scale: 0.7 },
@@ -132,7 +130,6 @@ const MainPage: React.FC<{
       }
     );
 
-    // 🟥 Contact - 위에서 떨어지고, 왼쪽으로 들어오기
     gsap.fromTo(
       ".contact-title",
       { opacity: 0, y: -50 },
