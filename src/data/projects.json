@@ -11,7 +11,7 @@
       "SNSInfo.png",
       "SNSDark.png"
     ],
-    "description": "회원가입, 로그인, 게시글 CRUD와 팔로우, 추천 및 검색 기능을 구현한 SNS 사이트",
+    "description": "회원가입, 로그인, 게시글 CRUD와 팔로우, 추천 및 해시태그, 검색 기능을 구현한 SNS 사이트",
     "url": "https://tomyhasblog.vercel.app",
     "gitHub": "https://github.com/tomyhas59/blog",
     "detail": {
