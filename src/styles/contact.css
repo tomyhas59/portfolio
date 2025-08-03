@@ -1,0 +1,15 @@
+.contact-wrapper {
+  background: linear-gradient(135deg, #f6f9fc, #e9eff5);
+  color: #333333;
+}
+.contact-title,
+.contact-content {
+  opacity: 0;
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+@media (max-width: 768px) {
+  .contact-content > p {
+    font-size: 16px;
+  }
+}

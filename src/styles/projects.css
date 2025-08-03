@@ -1,85 +1,74 @@
 /* projects */
 .projects-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  text-align: center;
 }
 
-.project-title {
-  opacity: 0;
-  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-}
-
-.projects {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  height: 500px;
-  opacity: 0;
-  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-}
-
-.card {
-  background-color: rgb(83, 213, 222);
-  width: 500px;
-  padding: 0 2rem 1.5rem 2rem;
+.projects-heading {
   font-size: 2rem;
-  border-radius: 10px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.projects-carousel-wrapper {
+  overflow: hidden;
+  width: 80%;
+  user-select: none;
+}
+
+.projects-carousel {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  will-change: transform;
 }
 
-.card img {
-  margin-top: -20%;
+.project-card {
+  width: 320px;
+  margin: 0 10px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 12px 12px 0 0;
+  object-fit: cover;
+  height: 180px;
+  display: block;
 }
-.go-to-project {
-  position: relative;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
+
+.project-name {
+  font-size: 1.3rem;
+  margin: 0.8rem 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.project-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1.4rem;
   background-color: #007bff;
-  margin: 0 auto;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.go-to-project:hover {
-  color: #007bff;
-  transform: translateY(4px);
-  background-color: white;
-}
-
-.left-arrow,
-.right-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 3rem;
-  color: #545252;
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.left-arrow:hover,
-.right-arrow:hover {
-  color: darkslategrey;
-}
-
-.left-arrow {
-  left: 10%;
-}
-
-.right-arrow {
-  right: 10%;
+.project-link:hover {
+  background-color: #0056b3;
 }
 
 /* project page */

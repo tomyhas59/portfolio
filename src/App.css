@@ -1,4 +1,7 @@
 @import url("./styles/projects.css");
+@import url("./styles/main.css");
+@import url("./styles/contact.css");
+@import url("./styles/aboutMe.css");
 
 .section-menu {
   z-index: 999;
@@ -83,12 +86,6 @@ footer {
   line-height: 100px;
 }
 
-.contact-title,
-.contact-content {
-  opacity: 0;
-  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-}
-
 @keyframes bounce {
   0%,
   20%,
@@ -122,82 +119,6 @@ footer {
   cursor: pointer;
 }
 
-.main > div {
-  width: 700px;
-  font-size: 100px;
-}
-
-.about-me-wrapper {
-  margin-top: 50px;
-}
-
-.about-me {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.about-me-title,
-.about-me-content {
-  opacity: 0;
-  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-}
-
-.about-me-content {
-  width: 500px;
-}
-
-.about-me-content > p {
-  transition: 0.5s;
-}
-
-.about-me-content > p:hover {
-  font-weight: 900;
-  color: rgb(248, 101, 3);
-}
-
-.about-me-content > p:hover + p {
-  color: rgb(247, 161, 103);
-  font-weight: 600;
-}
-
-.about-me-content > p:hover + p + p {
-  color: rgb(244, 205, 179);
-  font-weight: 200;
-}
-
-.about-me-content > p:has(+ p:hover) {
-  font-weight: 600;
-  color: rgb(247, 161, 103);
-}
-
-.about-me-content > p:has(+ p + p:hover) {
-  color: rgb(244, 205, 179);
-  font-weight: 200;
-}
-
-.skills {
-  width: 500px;
-  font-size: 20px;
-  font-weight: bold;
-  opacity: 0;
-  transition: opacity 1s ease-in;
-}
-
-.skills div {
-  margin-bottom: 15px;
-}
-
-.skill-img {
-  width: 60px;
-  margin: 2px;
-  transition: 0.2s ease-out;
-}
-
-.skill-img:hover {
-  transform: scale(1.1);
-}
-
 @media (max-width: 768px) {
   .section-menu {
     right: 10px;
@@ -207,32 +128,12 @@ footer {
     font-size: 10px;
   }
 
-  .main > div {
-    font-size: 20px;
-  }
-
-  .about-me-content > p {
-    width: 80%;
-    font-size: 16px;
-  }
-
-  .skills {
-    width: 250px;
-  }
-
-  .skill-img {
-    width: 45px;
-  }
-
   .down-button,
   .up-button {
     bottom: 80px;
     left: 45%;
   }
 
-  .contact-content > p {
-    font-size: 16px;
-  }
   .mode-toggle {
     transform: scale(0.8);
   }

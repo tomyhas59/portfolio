@@ -1,7 +1,6 @@
 import DownButton from "./DownButton";
 import CSS from "../assets/img/skills/CSS.svg";
 import Firebase from "../assets/img/skills/Firebase.svg";
-import Git from "../assets/img/skills/Git.svg";
 import Github from "../assets/img/skills/Github.svg";
 import GraphQL from "../assets/img/skills/GraphQL.svg";
 import HTML from "../assets/img/skills/HTML.svg";
@@ -33,7 +32,6 @@ const AboutMe = ({ id, downButton }: AboutMeProps) => {
     GraphQL,
     MySQL,
     Firebase,
-    Git,
     Github,
   ];
 

@@ -1,95 +1,70 @@
-import DownButton from "./DownButton";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import projectsData from "../data/projects.json";
-import { useState } from "react";
-import { useSpring, animated, config } from "react-spring";
-import Carousel from "react-spring-3d-carousel";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import DownButton from "./DownButton";
 
 interface ProjectsProps {
   id: string;
   downButton: () => void;
 }
 
-const Card = ({
-  id,
-  image,
-  name,
-}: {
-  id: number;
-  image: any;
-  name: string;
-}) => {
-  const [show, setShown] = useState(false);
-
-  const props3 = useSpring({
-    opacity: 1,
-    transform: show ? "scale(1.03)" : "scale(1)",
-    boxShadow: show
-      ? "0 20px 25px rgb(0 0 0 / 25%)"
-      : "0 2px 10px rgb(0 0 0 / 8%)",
-  });
-  return (
-    <animated.div
-      className="card"
-      style={props3}
-      onMouseEnter={() => setShown(true)}
-      onMouseLeave={() => setShown(false)}
-    >
-      <img src={image} alt="" />
-
-      <Link to={`/projects/${id}`} className="go-to-project">
-        {name}
-      </Link>
-    </animated.div>
-  );
-};
+const ITEM_WIDTH = 320;
+const SPEED = 2;
 
 const Projects = ({ id, downButton }: ProjectsProps) => {
-  const [goToSlide, setGoToSlide] = useState<number | undefined>(undefined);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const animationFrameId = useRef<number>();
+  const position = useRef(0);
 
-  const projects = projectsData.map((project) => ({
-    key: project.id,
-    content: (
-      <Card
-        id={project.id}
-        image={require(`../assets/img/${project.mainImg[0]}`)}
-        name={project.name}
-      />
-    ),
-  }));
+  // 무한 슬라이드용 2배 복제
+  const repeatedProjects = [...projectsData, ...projectsData];
 
-  const table = projects.map((element, index) => {
-    return { ...element, onClick: () => setGoToSlide(index) };
-  });
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
 
-  const [cards] = useState(table);
+    const totalWidth = ITEM_WIDTH * projectsData.length;
+
+    function animate() {
+      position.current -= SPEED;
+      if (position.current <= -totalWidth) {
+        position.current = 0;
+      }
+
+      container!.style.transform = `translateX(${position.current}px)`;
+
+      animationFrameId.current = requestAnimationFrame(animate);
+    }
+
+    animationFrameId.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+    };
+  }, []);
 
   return (
     <section className="projects-wrapper" id={id}>
-      <h2 className="project-title">Projects</h2>
-      <FaArrowLeft
-        className="left-arrow"
-        onClick={() =>
-          setGoToSlide((prev) => (prev !== undefined ? prev - 1 : 0))
-        }
-      />
-      <div className="projects">
-        <Carousel
-          slides={cards}
-          goToSlide={goToSlide}
-          offsetRadius={1}
-          showNavigation={false}
-          animationConfig={config.gentle}
-        />
+      <h2 className="projects-heading">Projects</h2>
+      <div className="projects-carousel-wrapper">
+        <div className="projects-carousel" ref={containerRef}>
+          {repeatedProjects.map((project, idx) => (
+            <div className="project-card" key={idx}>
+              <img
+                src={require(`../assets/img/${project.mainImg[0]}`)}
+                alt={project.name}
+                className="project-image"
+              />
+              <h3 className="project-name">{project.name}</h3>
+              <Link to={`/projects/${project.id}`} className="project-link">
+                자세히 보기 →
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-      <FaArrowRight
-        className="right-arrow"
-        onClick={() =>
-          setGoToSlide((prev) => (prev !== undefined ? prev + 1 : 0))
-        }
-      />
-
       <DownButton downButton={downButton} />
     </section>
   );

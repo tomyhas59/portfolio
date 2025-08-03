@@ -1,0 +1,14 @@
+.main {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  color: #1e1e1e;
+}
+.main > div {
+  width: 700px;
+  font-size: 100px;
+}
+
+@media (max-width: 768px) {
+  .main > div {
+    font-size: 20px;
+  }
+}
