@@ -27,7 +27,7 @@ const ProjectPage: React.FC<{
   useEffect(() => {
     gsap.fromTo(
       ".project-name",
-      { opacity: 0, y: -40 },
+      { opacity: 0, y: -500 },
       {
         opacity: 1,
         y: 0,
@@ -42,7 +42,7 @@ const ProjectPage: React.FC<{
 
     gsap.fromTo(
       ".description",
-      { opacity: 0, y: 30 },
+      { opacity: 0, y: -500 },
       {
         opacity: 1,
         y: 0,
@@ -58,10 +58,10 @@ const ProjectPage: React.FC<{
 
     gsap.fromTo(
       ".project-item",
-      { opacity: 0, scale: 0.95 },
+      { opacity: 0, x: -500 },
       {
         opacity: 1,
-        scale: 1,
+        x: 0,
         duration: 1,
         ease: "power2.out",
         delay: 0.4,
@@ -73,16 +73,16 @@ const ProjectPage: React.FC<{
     );
 
     gsap.fromTo(
-      ".project-detail",
-      { opacity: 0, y: 20 },
+      ".right-section",
+      { opacity: 0, x: 500 },
       {
         opacity: 1,
-        y: 0,
+        x: 0,
         duration: 1,
         ease: "power2.out",
         delay: 0.6,
         scrollTrigger: {
-          trigger: ".project-detail",
+          trigger: ".right-section",
           start: "top 90%",
         },
       }
@@ -155,38 +155,48 @@ const ProjectPage: React.FC<{
             </Slider>
           </div>
           <div className="right-section">
-            <section className="features-section">
+            <div className="features-section">
               <h3>주요 기능</h3>
               <ul>
                 {project.features.map((feature, idx) => (
                   <li key={idx}>{feature}</li>
                 ))}
               </ul>
-            </section>
-            <section className="stack-section">
+            </div>
+            <div className="stack-section">
               <h3>기술 스택</h3>
-              <p>
-                <strong>Frontend:</strong>
-                {project.stack.frontend.join(", ") || "없음"}
-                <br />
-                <strong>Backend:</strong>
-                {project.stack.backend.join(", ") || "없음"}
-                <br />
-                <strong>Deploy:</strong>{" "}
-                {project.stack.deploy.join(", ") || "없음"}
-              </p>
-            </section>
+              <div className="stack-list">
+                <ul>
+                  <h6>Frontend</h6>
+                  {project.stack.frontend.map((skill) => (
+                    <li>{skill}</li>
+                  ))}
+                </ul>
+                <ul>
+                  <h6>Backend</h6>
+                  {project.stack.backend.map((skill) => (
+                    <li>{skill}</li>
+                  ))}
+                </ul>
+                <ul>
+                  <h6>Deploy</h6>
+                  {project.stack.deploy.map((skill) => (
+                    <li>{skill}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       {id === "1" ? null : (
         <button className="prev-project" onClick={prevProject}>
-          prev &nbsp;
+          이전 프로젝트
         </button>
       )}
       {id === `${projectsData.length}` ? null : (
         <button className="next-project" onClick={nextProject}>
-          &nbsp; next
+          다음 프로젝트
         </button>
       )}
     </div>
