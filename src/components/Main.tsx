@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
 import DownButton from "./DownButton";
+import { PropsType } from "../types/commonPropsType";
 
-interface ProjectsProps {
-  id: string;
-  downButton: () => void;
-}
-
-const Main = ({ id, downButton }: ProjectsProps) => {
+const Main = ({ id, downButton }: PropsType) => {
   const text = " Hello, This is YongHyeon's portfolio!!";
   const [typedText, setTypedText] = useState("");
 

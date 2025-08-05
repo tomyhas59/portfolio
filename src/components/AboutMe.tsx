@@ -12,13 +12,9 @@ import React from "../assets/img/skills/React.svg";
 import Redux from "../assets/img/skills/Redux.svg";
 import Sass from "../assets/img/skills/Sass.svg";
 import TypeScript from "../assets/img/skills/TypeScript.svg";
+import { PropsType } from "../types/commonPropsType";
 
-interface AboutMeProps {
-  id: string;
-  downButton: () => void;
-}
-
-const AboutMe = ({ id, downButton }: AboutMeProps) => {
+const AboutMe = ({ id, downButton }: PropsType) => {
   const skills = [
     HTML,
     CSS,

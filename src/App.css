@@ -2,6 +2,7 @@
 @import url("./styles/main.css");
 @import url("./styles/contact.css");
 @import url("./styles/aboutMe.css");
+@import url("./styles/projectDetail.css");
 
 .section-menu {
   z-index: 999;

@@ -135,48 +135,49 @@ const ProjectPage: React.FC<{
       <div className="project-page-content">
         <h2 className="project-name">{project.name}</h2>
         <p className="description">{project.description}</p>
-        <Slider {...settings} className="project-item">
-          {project.imgs.map((img, index) => (
-            <a
-              className="project-link"
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={index}
-            >
-              <img
-                className="project-img"
-                src={require(`../assets/img/${img}`)}
-                alt={`${project.name} 이미지 ${index}`}
-              />
-            </a>
-          ))}
-        </Slider>
-
-        {project.detail && (
-          <div className="project-detail">
-            <div className="client-detail">
-              <div className="detail-title">client</div>
+        <div className="project-section">
+          <div className="left-section">
+            <Slider {...settings} className="project-item">
+              {project.imgs.map((img, index) => (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={index}
+                >
+                  <img
+                    className="project-img"
+                    src={require(`../assets/img/${img}`)}
+                    alt={`${project.name} 이미지 ${index}`}
+                  />
+                </a>
+              ))}
+            </Slider>
+          </div>
+          <div className="right-section">
+            <section className="features-section">
+              <h3>주요 기능</h3>
               <ul>
-                {project.detail?.client.map((item, index) => (
-                  <li key={index}>{item}</li>
+                {project.features.map((feature, idx) => (
+                  <li key={idx}>{feature}</li>
                 ))}
               </ul>
-            </div>
-            <div className="server-detail">
-              {project.detail?.server && (
-                <>
-                  <div className="detail-title">server</div>
-                  <ul>
-                    {project.detail.server.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </div>
+            </section>
+            <section className="stack-section">
+              <h3>기술 스택</h3>
+              <p>
+                <strong>Frontend:</strong>
+                {project.stack.frontend.join(", ") || "없음"}
+                <br />
+                <strong>Backend:</strong>
+                {project.stack.backend.join(", ") || "없음"}
+                <br />
+                <strong>Deploy:</strong>{" "}
+                {project.stack.deploy.join(", ") || "없음"}
+              </p>
+            </section>
           </div>
-        )}
+        </div>
       </div>
       {id === "1" ? null : (
         <button className="prev-project" onClick={prevProject}>

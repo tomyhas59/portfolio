@@ -14,20 +14,31 @@
     "description": "회원가입, 로그인, 게시글 CRUD와 팔로우, 추천 및 해시태그, 검색 기능을 구현한 SNS 사이트",
     "url": "https://tomyhasblog.vercel.app",
     "gitHub": "https://github.com/tomyhas59/blog",
-    "detail": {
-      "client": [
-        "상태 관리를 위한 Redux",
-        "TypeScript로 코드 안정성 확보",
-        "styled-components를 통한 유연한 스타일링",
-        "Socket.IO로 실시간 채팅 및 알림 기능 구현",
-        "검색 기능 구현으로 사용자 경험 향상"
+    "features": [
+      "JWT 기반 회원가입/로그인",
+      "게시글 CRUD, 이미지 업로드",
+      "팔로우 기능 및 피드 추천 알고리즘",
+      "Socket.IO 기반 실시간 채팅 및 알림",
+      "다크모드 및 반응형 UI",
+      "해시태그 및 키워드 검색 기능"
+    ],
+    "stack": {
+      "frontend": [
+        "React",
+        "Redux",
+        "TypeScript",
+        "styled-components",
+        "Socket.IO-client"
       ],
-      "server": [
-        "Node.js와 Express로 구축한 서버",
-        "JWT를 활용한 인증 시스템",
-        "PostgreSQL과 Sequelize로 데이터 관리",
-        "Socket.IO를 통한 실시간 웹 소켓 기능"
-      ]
+      "backend": [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Sequelize",
+        "JWT",
+        "Socket.IO"
+      ],
+      "deploy": ["Vercel", "Koyeb"]
     }
   },
   {
@@ -40,20 +51,19 @@
       "shopProducts.png",
       "shopCart.png"
     ],
-    "description": "간단한 회원가입, 로그인, 상품 리뷰, 장바구니 담기 기능 쇼핑몰 사이트",
+    "description": "회원가입, 로그인, 상품 조회 및 장바구니 기능을 제공하는 쇼핑몰 사이트",
     "url": "https://tmshop.vercel.app/",
     "gitHub": "https://github.com/tomyhas59/shop",
-    "detail": {
-      "client": [
-        "Next.js와 TypeScript 사용",
-        "GraphQL 뮤테이션으로 서버 통신",
-        "Recoil을 통한 전역 상태 관리",
-        "Firebase Authentication으로 로그인 처리"
-      ],
-      "server": [
-        "Apollo Server로 GraphQL 쿼리 처리",
-        "Firebase Firestore를 이용한 데이터 관리"
-      ]
+    "features": [
+      "상품 목록 및 상세 페이지 구현",
+      "장바구니 담기/삭제 기능",
+      "GraphQL 기반 서버 통신",
+      "Firebase 인증을 통한 로그인/회원가입"
+    ],
+    "stack": {
+      "frontend": ["Next.js", "TypeScript", "Recoil", "GraphQL", "React Query"],
+      "backend": ["Apollo Server", "Firebase Firestore"],
+      "deploy": ["Vercel", "CloudType"]
     }
   },
   {
@@ -61,11 +71,18 @@
     "name": "심심풀이",
     "mainImg": ["game1.png"],
     "imgs": ["game1.png", "game2.png", "game3.png"],
-    "description": "React를 활용한 간단한 웹 게임",
+    "description": "간단한 미니 웹 게임 모음 프로젝트",
     "url": "https://tmsgame.vercel.app",
     "gitHub": "https://github.com/tomyhas59/reactGame",
-    "detail": {
-      "client": ["JavaScript와 React로 개발한 웹 게임"]
+    "features": [
+      "React 기반 미니 게임 개발",
+      "점수판 및 간단한 랭킹 로직",
+      "기능별 컴포넌트 분리 및 재사용"
+    ],
+    "stack": {
+      "frontend": ["React", "JavaScript"],
+      "backend": [],
+      "deploy": ["Netlify"]
     }
   },
   {
@@ -73,12 +90,19 @@
     "name": "가계부",
     "mainImg": ["household1.png"],
     "imgs": ["householdMain.png", "household1.png", "household2.png"],
-    "description": "웹 기반 가계부 애플리케이션",
+    "description": "수입/지출을 기록하고 시각화할 수 있는 웹 기반 가계부 애플리케이션",
     "url": "https://tomyhas59.github.io/household-book",
     "gitHub": "https://github.com/tomyhas59/household-book",
-    "detail": {
-      "client": ["TypeScript로 안정성 강화", "Recoil을 통한 전역 상태 관리"],
-      "server": ["Java Spring Boot로 서버 구축", "MariaDB로 데이터 관리"]
+    "features": [
+      "월별 수입/지출 데이터 입력 및 필터링",
+      "카테고리별 통계 시각화",
+      "Recoil을 통한 상태 관리",
+      "Spring Boot 기반 API 서버 연동"
+    ],
+    "stack": {
+      "frontend": ["React", "TypeScript", "Recoil"],
+      "backend": ["Java", "Spring Boot", "MariaDB"],
+      "deploy": ["GitHub Pages", "CloudType"]
     }
   }
 ]
