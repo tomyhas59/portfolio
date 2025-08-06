@@ -133,7 +133,7 @@ const ProjectPage: React.FC<{
       </div>
 
       <div className="project-page-content">
-        <h2 className="project-name">{project.name}</h2>
+        <h2 className="project-page-project-name">{project.name}</h2>
         <p className="description">{project.description}</p>
         <div className="project-section">
           <div className="left-section">
@@ -172,12 +172,14 @@ const ProjectPage: React.FC<{
                     <li>{skill}</li>
                   ))}
                 </ul>
-                <ul>
-                  <h6>Backend</h6>
-                  {project.stack.backend.map((skill) => (
-                    <li>{skill}</li>
-                  ))}
-                </ul>
+                {project.stack.backend.length > 1 && (
+                  <ul>
+                    <h6>Backend</h6>
+                    {project.stack.backend.map((skill) => (
+                      <li>{skill}</li>
+                    ))}
+                  </ul>
+                )}
                 <ul>
                   <h6>Deploy</h6>
                   {project.stack.deploy.map((skill) => (

@@ -2,6 +2,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .go-to-site {
@@ -54,11 +55,9 @@
   justify-content: space-between;
 }
 
-.project-name {
-  font-size: 40px !important;
-  font-weight: bold;
+.project-page-project-name {
   @media (max-width: 768px) {
-    margin-top: 50px;
+    margin-top: 70px;
   }
 }
 
@@ -78,6 +77,7 @@
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 10px;
+    margin: 20px auto;
   }
 }
 
@@ -123,6 +123,7 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   transition: background-color 0.3s, color 0.3s;
   @media (max-width: 768px) {
+    margin-top: 20px;
     width: 150px;
   }
 }
@@ -152,6 +153,7 @@
 }
 .features-section ul li {
   list-style: decimal;
+  word-break: keep-all;
   @media (max-width: 768px) {
     font-size: 0.75rem;
   }
