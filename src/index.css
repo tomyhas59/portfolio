@@ -44,6 +44,18 @@ body.dark-mode #list.active {
   background-image: linear-gradient(to right, crimson, crimson);
 }
 
+body.dark-mode .section-list > li {
+  background-image: linear-gradient(to right, #fff, #fff);
+}
+
+body.dark-mode .section-list > li:hover {
+  background-image: linear-gradient(to right, #fff, #fff);
+}
+
+body.dark-mode .section-list > li.active {
+  background-image: linear-gradient(to right, crimson, crimson);
+}
+
 body.dark-mode .down-button,
 body.dark-mode .up-button,
 body.dark-mode .right-arrow,
