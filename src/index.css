@@ -57,16 +57,12 @@ body.dark-mode .section-list > li.active {
 }
 
 body.dark-mode .down-button,
-body.dark-mode .up-button,
-body.dark-mode .right-arrow,
-body.dark-mode .left-arrow {
+body.dark-mode .up-button {
   color: #fff;
 }
 
 body.dark-mode .down-button:hover,
-body.dark-mode .up-button:hover,
-body.dark-mode .right-arrow:hover,
-body.dark-mode .left-arrow:hover {
+body.dark-mode .up-button:hover {
   color: darkslategrey;
   cursor: pointer;
 }

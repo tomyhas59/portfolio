@@ -18,6 +18,7 @@ const MainPage: React.FC<{
   useEffect(() => {
     document.body.classList.toggle("dark-mode", isDarkMode);
   }, [isDarkMode]);
+
   useEffect(() => {
     const sections = ["home", "about-me", "projects", "contact"];
 
@@ -31,137 +32,6 @@ const MainPage: React.FC<{
         onEnterBack: () => setActiveSection(section),
       });
     });
-
-    gsap.fromTo(
-      ".about-me-title",
-      { opacity: 0, x: -150 },
-      {
-        opacity: 1,
-        x: 0,
-        scrollTrigger: {
-          trigger: "#about-me",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-        duration: 1.2,
-        ease: "power3.out",
-      }
-    );
-
-    gsap.fromTo(
-      ".about-me-content",
-      { opacity: 0, x: 150 },
-      {
-        opacity: 1,
-        x: 0,
-        scrollTrigger: {
-          trigger: "#about-me",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-        duration: 1.2,
-        ease: "power3.out",
-      }
-    );
-
-    gsap.fromTo(
-      ".skills",
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: "#about-me",
-          start: "top 75%",
-          toggleActions: "play none none reverse",
-        },
-        duration: 0.8,
-        delay: 0.3,
-        ease: "power2.out",
-      }
-    );
-
-    gsap.fromTo(
-      ".project-title",
-      { opacity: 0, scale: 0.7 },
-      {
-        opacity: 1,
-        scale: 1,
-        scrollTrigger: {
-          trigger: "#projects",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-        duration: 1,
-        ease: "back.out(1.7)",
-      }
-    );
-
-    gsap.fromTo(
-      ".projects",
-      { opacity: 0, y: 100 },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: "#projects",
-          start: "top 70%",
-          toggleActions: "play none none reverse",
-        },
-        duration: 1,
-        ease: "power3.out",
-      }
-    );
-
-    gsap.fromTo(
-      [".left-arrow", ".right-arrow"],
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: "#projects",
-          start: "top 65%",
-          toggleActions: "play none none reverse",
-        },
-        duration: 0.8,
-        delay: 0.5,
-        ease: "power2.out",
-      }
-    );
-
-    gsap.fromTo(
-      ".contact-title",
-      { opacity: 0, y: -50 },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: "#contact",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-        duration: 1,
-        ease: "bounce.out",
-      }
-    );
-
-    gsap.fromTo(
-      ".contact-content",
-      { opacity: 0, x: 100 },
-      {
-        opacity: 1,
-        x: 0,
-        scrollTrigger: {
-          trigger: "#contact",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-        duration: 1,
-        delay: 0.3,
-        ease: "power2.out",
-      }
-    );
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());

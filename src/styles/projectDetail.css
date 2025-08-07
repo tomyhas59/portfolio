@@ -2,7 +2,8 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  padding: 20px;
+  overflow-x: hidden;
 }
 
 .go-to-site {
@@ -63,9 +64,10 @@
 
 .description {
   width: 700px;
-  font-size: 16px;
+  font-size: 1rem;
   @media (max-width: 768px) {
-    width: 300px;
+    font-size: 0.7rem;
+    width: 200px;
     word-break: keep-all;
   }
 }
@@ -106,17 +108,16 @@
 .right-section {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
 
   @media (max-width: 768px) {
     flex-direction: row;
-    gap: 10px;
   }
 }
 
 .features-section,
 .stack-section {
-  width: 600px;
+  width: 500px;
   background-color: #f9f9f9;
   padding: 24px 28px;
   border-radius: 12px;
@@ -126,13 +127,6 @@
     margin-top: 20px;
     width: 150px;
   }
-}
-
-.dark-mode .features-section,
-.dark-mode .stack-section {
-  background-color: #1f1f1f;
-  color: #eee;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
 }
 
 .features-section h3,
@@ -146,44 +140,33 @@
   }
 }
 
-.features-section ul {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.features-section ul li {
-  list-style: decimal;
-  word-break: keep-all;
-  @media (max-width: 768px) {
-    font-size: 0.75rem;
-  }
+.features-section ul,
+.stack-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.dark-mode .features-section h3,
-.dark-mode .stack-section h3 {
-  color: #fff;
-}
-
-.dark-mode .features-section li {
-  color: #ccc;
+.features-section li,
+.stack-section li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: #333;
 }
 
 .stack-list {
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.stack-list h6 {
-  font-size: 1rem;
+.stack-section h6 {
+  font-size: 0.95rem;
   font-weight: 600;
-  margin-bottom: 10px;
-  color: #1a73e8;
-}
-
-.dark-mode .stack-list h6 {
-  color: #4fa7ff;
+  margin-bottom: 0.5rem;
+  color: #555;
 }
 
 .stack-list li {
@@ -192,48 +175,81 @@
   margin-bottom: 6px;
   padding-left: 12px;
   position: relative;
-  list-style: decimal;
   @media (max-width: 768px) {
     font-size: 0.75rem;
   }
 }
 
-.dark-mode .stack-list li {
-  color: #ccc;
-}
-
-.dark-mode .stack-list li::before {
-  color: #4fa7ff;
-}
-
-.next-project,
-.prev-project {
-  position: absolute;
-  width: 100px;
-  height: 55px;
-  border-radius: 50px 0 0 50px;
-  background-color: rgb(167, 167, 167);
-  top: 10%;
-  transform: translateY(-40%);
-  cursor: pointer;
+/*prev, next*/
+.prev-project,
+.next-project {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.75);
   border: none;
-  text-align: center;
-  color: #f7efef;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 9999;
+  user-select: none;
+
+  @media (max-width: 768px) {
+    padding: 0.7rem;
+    font-size: 0.7rem;
+    top: 12%;
+  }
 }
 
-.next-project:hover,
-.prev-project:hover {
-  background-color: rgb(131, 128, 128);
-  color: #f4f5f5;
+.prev-project {
+  left: 0;
+  border-radius: 0 8px 8px 0;
 }
 
 .next-project {
-  border-radius: 0 50px 50px 0;
   right: 0;
+  border-radius: 8px 0 0 8px;
+}
+
+.prev-project:hover,
+.next-project:hover {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .slick-prev:before,
 .slick-next:before {
   background-color: black;
   border-radius: 50%;
+}
+/*dark mode*/
+.dark-mode .features-section h3,
+.dark-mode .stack-section h3 {
+  color: #fff;
+}
+
+.dark-mode .features-section li {
+  color: #ccc;
+}
+.dark-mode .features-section,
+.dark-mode .stack-section {
+  background-color: #1f1f1f;
+  color: #eee;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .stack-list h6 {
+  color: #4fa7ff;
+}
+
+.dark-mode .stack-list li {
+  color: #ccc;
+}
+.dark-mode .stack-list li::before {
+  color: #4fa7ff;
 }

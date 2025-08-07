@@ -13,6 +13,7 @@ import Redux from "../assets/img/skills/Redux.svg";
 import Sass from "../assets/img/skills/Sass.svg";
 import TypeScript from "../assets/img/skills/TypeScript.svg";
 import { PropsType } from "../types/commonPropsType";
+import gsap from "gsap";
 
 const AboutMe = ({ id, downButton }: PropsType) => {
   const skills = [
@@ -30,6 +31,55 @@ const AboutMe = ({ id, downButton }: PropsType) => {
     Firebase,
     Github,
   ];
+
+  gsap.fromTo(
+    ".about-me-title",
+    { opacity: 0, x: -150 },
+    {
+      opacity: 1,
+      x: 0,
+      scrollTrigger: {
+        trigger: "#about-me",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+      duration: 1.2,
+      ease: "power3.out",
+    }
+  );
+
+  gsap.fromTo(
+    ".about-me-content",
+    { opacity: 0, x: 150 },
+    {
+      opacity: 1,
+      x: 0,
+      scrollTrigger: {
+        trigger: "#about-me",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+      duration: 1.2,
+      ease: "power3.out",
+    }
+  );
+
+  gsap.fromTo(
+    ".skills",
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1,
+      y: 0,
+      scrollTrigger: {
+        trigger: "#about-me",
+        start: "top 75%",
+        toggleActions: "play none none reverse",
+      },
+      duration: 0.8,
+      delay: 0.3,
+      ease: "power2.out",
+    }
+  );
 
   return (
     <section className="about-me-wrapper" id={id}>

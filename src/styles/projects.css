@@ -17,24 +17,16 @@
 
 .project-link {
   position: relative;
-  display: block;
   border-radius: 15px;
-  overflow: hidden;
+  padding: 12px;
   cursor: pointer;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease;
-  text-decoration: none;
-}
-
-.project-link:hover {
-  transform: translateY(-8px);
 }
 
 .project-image {
-  width: 100%;
+  width: 90%;
   height: 180px;
   object-fit: cover;
-  display: block;
   border-radius: 15px;
   transition: filter 0.3s ease;
 }
@@ -73,10 +65,21 @@
 }
 
 @media (max-width: 800px) {
+  .project-image {
+    width: 90%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: filter 0.3s ease;
+  }
+
   .projects-list {
     grid-template-columns: repeat(2, 1fr);
   }
   .project-name {
     font-size: 1rem !important;
+  }
+  .project-link::before {
+    font-size: 0.7rem;
   }
 }
