@@ -86,6 +86,13 @@
 .project-item {
   width: 800px;
   border-radius: 20px;
+
+  @media (max-width: 1200px) {
+    width: 600px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
   @media (max-width: 768px) {
     width: 300px;
     height: 200px;
@@ -109,9 +116,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-
   @media (max-width: 768px) {
-    flex-direction: row;
+    gap: 0;
   }
 }
 
@@ -119,13 +125,13 @@
 .stack-section {
   width: 500px;
   background-color: #f9f9f9;
-  padding: 24px 28px;
+  padding: 16px;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   transition: background-color 0.3s, color 0.3s;
   @media (max-width: 768px) {
     margin-top: 20px;
-    width: 150px;
+    width: 100%;
   }
 }
 
@@ -140,26 +146,23 @@
   }
 }
 
-.features-section ul,
-.stack-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .features-section li,
 .stack-section li {
-  padding: 0.5rem 0;
   border-bottom: 1px solid #eee;
   font-size: 1rem;
   color: #333;
+  word-break: keep-all;
 }
 
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .stack-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  display: flex;
+  justify-content: space-around;
   gap: 1rem;
-  margin-top: 1rem;
 }
 
 .stack-section h6 {
@@ -173,7 +176,6 @@
   font-size: 0.95rem;
   color: #444;
   margin-bottom: 6px;
-  padding-left: 12px;
   position: relative;
   @media (max-width: 768px) {
     font-size: 0.75rem;

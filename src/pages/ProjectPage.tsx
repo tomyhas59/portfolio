@@ -157,7 +157,7 @@ const ProjectPage: React.FC<{
           <div className="right-section">
             <div className="features-section">
               <h3>주요 기능</h3>
-              <ul>
+              <ul className="features-list">
                 {project.features.map((feature, idx) => (
                   <li key={idx}>{feature}</li>
                 ))}
