@@ -1,5 +1,11 @@
 .contact-wrapper {
-  background: linear-gradient(135deg, #f6f9fc, #e9eff5);
+  background: linear-gradient(
+    160deg,
+    #edf6f9 0%,
+    #d0e8f2 33%,
+    #a9d6e5 66%,
+    #89c2d9 100%
+  );
   color: #333333;
 }
 .contact-title,

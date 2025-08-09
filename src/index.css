@@ -93,22 +93,46 @@ body.dark-mode {
   background-color: #0e0e0e;
 
   .main {
-    background: linear-gradient(135deg, #121212, #1f1f1f);
+    background: linear-gradient(
+      135deg,
+      #0b132b 0%,
+      #1c2541 33%,
+      #3a506b 66%,
+      #5bc0be 100%
+    );
     color: #f5f5f5;
   }
 
   .about-me-wrapper {
-    background: radial-gradient(circle at center, #1a1a1a, #0d0d0d);
+    background: linear-gradient(
+      120deg,
+      #081c15 0%,
+      #1b4332 33%,
+      #2d6a4f 66%,
+      #40916c 100%
+    );
     color: #e0e0e0;
   }
 
   .projects-wrapper {
-    background: linear-gradient(120deg, #1c1f26, #2c3e50);
+    background: linear-gradient(
+      90deg,
+      #1a1423 0%,
+      #3d314a 33%,
+      #684756 66%,
+      #96705b 100%
+    );
     color: #ffffff;
   }
 
   .contact-wrapper {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(
+      160deg,
+      #0d1b2a 0%,
+      #1b263b 33%,
+      #415a77 66%,
+      #778da9 100%
+    );
     color: #f0f0f0;
   }
 }

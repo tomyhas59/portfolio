@@ -1,5 +1,11 @@
 .main {
-  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  background: linear-gradient(
+    135deg,
+    #e3f6f5 0%,
+    #bae8e8 33%,
+    #a0d2db 66%,
+    #5eaaa8 100%
+  );
   color: #1e1e1e;
 }
 .main > div {
@@ -11,4 +17,19 @@
   .main > div {
     font-size: 20px;
   }
+}
+
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.text-type__cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  opacity: 1;
+}
+
+.text-type__cursor--hidden {
+  display: none;
 }

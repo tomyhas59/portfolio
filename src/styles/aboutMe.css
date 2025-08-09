@@ -1,5 +1,11 @@
 .about-me-wrapper {
-  background: radial-gradient(circle at top left, #ffffff, #f2f2f2);
+  background: linear-gradient(
+    120deg,
+    #f8f1e5 0%,
+    #f5e6ca 33%,
+    #dab894 66%,
+    #b68d64 100%
+  );
   color: #222222;
 }
 

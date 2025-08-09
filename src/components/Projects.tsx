@@ -53,6 +53,8 @@ const Projects = ({ id, downButton }: ProjectsProps) => {
             scrollTrigger: {
               trigger: target,
               start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play reverse play reverse",
             },
           }
         );
