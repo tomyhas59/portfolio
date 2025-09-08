@@ -1,13 +1,11 @@
 # My Portfolio
 
-## 👋 소개
+## 소개
 개인 프로젝트 포트폴리오입니다.  
 개발 과정에서 경험한 기술, 프로젝트 목표, 배운 점을 중심으로 구성했습니다.  
 실제 배포된 서비스와 GitHub 소스도 확인 가능합니다.
 
----
-
-# 📂 프로젝트 목록
+#  프로젝트 목록
 
 ## 1. SNS 클론 프로젝트
 ### 개요
@@ -42,7 +40,7 @@
 - [배포 사이트](https://tomyhasblog.vercel.app)  
 - [GitHub](https://github.com/tomyhas59/blog)
 
----
+
 
 ## 2. 쇼핑몰 프로젝트
 ### 개요
@@ -70,7 +68,6 @@
 - [배포 사이트](https://tmshop.vercel.app/)  
 - [GitHub](https://github.com/tomyhas59/shop)
 
----
 
 ## 3. 심심풀이 프로젝트
 ### 개요
@@ -93,8 +90,6 @@
 ### 배포 및 소스 코드
 - [배포 사이트](https://tmsgame.vercel.app)  
 - [GitHub](https://github.com/tomyhas59/reactGame)
-
----
 
 ## 4. 가계부 프로젝트
 ### 개요
@@ -121,17 +116,9 @@
 - [배포 사이트](https://tomyhas59.github.io/household-book)  
 - [GitHub](https://github.com/tomyhas59/household-book)
 
----
-
-# 🛠️ 사용 기술 스택
+# 사용 기술 스택
 - **Frontend**: React, Next.js, TypeScript, Redux, Recoil, styled-components, GraphQL, React Query, Socket.IO-client
 - **Backend**: Node.js, Express, Spring Boot, PostgreSQL, Firebase Firestore, Apollo Server, JWT, Socket.IO
 - **Database**: PostgreSQL, Firebase Firestore, MariaDB
 - **Deployment**: Vercel, Netlify, CloudType, GitHub Pages
 
----
-
-# 📫 연락처
-- Email: youremail@example.com  
-- GitHub: [github.com/username](https://github.com/username)  
-- LinkedIn: [linkedin.com/in/username](https://linkedin.com/in/username)
