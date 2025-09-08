@@ -9,7 +9,7 @@ import {
   useMemo,
   useCallback,
 } from "react";
-import { gsap } from "gsap";
+import gsap from "gsap";
 
 interface TextTypeProps {
   className?: string;
