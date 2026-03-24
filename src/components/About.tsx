@@ -93,18 +93,26 @@ const About: React.FC = () => (
       {/* Right */}
       <div className="about__right reveal-right">
         <p className="about__text">
-          안녕하세요! <strong>백엔드 기반의 풀스택 개발자</strong>를 목표로
-          공부하고 있습니다.
-          <strong> Java · Spring Boot</strong>로 서버와 REST API를 설계하는 데
-          집중하며,
-          <strong> Python</strong>까지 활용해 다양한 백엔드 요구사항에
-          대응합니다.
+          안녕하세요! <strong>문제를 끝까지 해결하는 개발자</strong>{" "}
+          이용현입니다. 8년간 자막 방송 송출 업무를 수행하며 한 글자의 오류도
+          허용되지 않는 환경에서 일해왔고 이를 통해 정확성과 책임감을 기반으로
+          한 문제 해결 태도를 갖추게 되었습니다.
         </p>
+
         <p className="about__text">
-          서버 구현에 그치지 않고 <strong>React · TypeScript</strong>로
-          프론트엔드까지 직접 개발하며 서비스 전체 흐름을 이해하는 풀스택
-          개발자를 지향합니다. 실시간 채팅, GraphQL 통신, Oracle DB 연동 등
-          다양한 경험을 통해 성장하고 있습니다.
+          현재는 <strong>Java · Spring Boot</strong>를 중심으로 서버와 REST
+          API를 설계하고 있으며,
+          <strong>Python</strong>을 활용한 데이터 처리까지 경험하며 백엔드
+          역량을 확장하고 있습니다. 또한 <strong>React · TypeScript</strong>로
+          프론트엔드까지 직접 개발하며 서비스의 전체 흐름을 이해하는 개발자로
+          성장하고 있습니다.
+        </p>
+
+        <p className="about__text">
+          실시간 채팅, GraphQL 통신, Oracle DB 연동, AI 요약 기능 구현 등 다양한
+          프로젝트 경험을 통해 단순 기능 구현을 넘어{" "}
+          <strong>사용자 관점에서 문제를 해결하는 개발</strong>에 집중하고
+          있습니다.
         </p>
 
         <p className="about__skills-title">기술 스택</p>
