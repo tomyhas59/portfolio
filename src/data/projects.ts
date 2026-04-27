@@ -132,7 +132,7 @@ export const projects: Project[] = [
       "변호사 목록 페이지네이션",
     ],
     stack: {
-      frontend: ["React", "TypeScript"],
+      frontend: ["React", "JavaScript"],
       backend: ["Java", "Spring Boot", "Oracle DB", "Python"],
       deploy: [],
     },
