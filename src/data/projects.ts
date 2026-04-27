@@ -37,7 +37,6 @@ export const projects: Project[] = [
     features: [
       "JWT 인증 구조 설계",
       "게시글·댓글·이미지 CRUD, Multer 파일 업로드 처리",
-      "팔로우 그래프 기반 피드 추천 알고리즘 구현",
       "Socket.IO 룸 관리로 1:1 실시간 채팅 및 읽음 처리",
       "해시태그 파싱·색인 및 키워드 전체 검색 기능",
       "CSS-in-JS 다크모드 토글 및 반응형 레이아웃",
